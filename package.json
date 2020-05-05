@@ -1,6 +1,11 @@
 {
-  "name": "custom-server-express",
-  "version": "1.0.0",
+  "name": "library2",
+  "version": "0.1.0",
+  "author": {
+    "email": "d@danmckeown.info",
+    "name": "Dan McKeown",
+    "copyright": "2020"
+  },
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
@@ -11,6 +16,7 @@
     "express": "^4.17.1",
     "next": "latest",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.0.0"
   }
 }

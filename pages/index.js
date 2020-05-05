@@ -1,17 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 
+import IndexPage from "./indexPage";
+
 export default () => (
-  <ul>
-    <li>
-      <Link href="/b" as="/a">
-        <a>a</a>
-      </Link>
-    </li>
-    <li>
-      <Link href="/a" as="/b">
-        <a>b</a>
-      </Link>
-    </li>
-  </ul>
+  <div id="totalLibrary1Container">
+    <IndexPage />
+  </div>
 )
