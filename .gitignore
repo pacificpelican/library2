@@ -29,4 +29,6 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-
+# upload data
+public/uploads
+db
