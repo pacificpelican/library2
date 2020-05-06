@@ -1,7 +1,6 @@
 import React from "react";
 import {Helmet} from "react-helmet";
 
-import Upload from "../components/uploadForm";
 import VreelUpload from "../components/upload";
 
 function indexPage() {
@@ -112,10 +111,6 @@ function indexPage() {
           <section id="cafe">
             <span>cafe</span>
           </section>
-        </main>
-
-        <main id="uploadOnMain">
-          <Upload username='mango' />
         </main>
 
         <footer id="info">

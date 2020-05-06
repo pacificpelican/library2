@@ -15,10 +15,10 @@ var crypto = require('crypto');
 
 var db = new loki(__dirname + '/db/lop.json')
 
-function randomValueHex (len) { //  via https://blog.tompawlak.org/generate-random-values-nodejs-javascript
-  return crypto.randomBytes(Math.ceil(len/2))
-      .toString('hex') // convert to hexadecimal format
-      .slice(0,len);   // return required number of characters
+function randomValueHex(len) { //  via https://blog.tompawlak.org/generate-random-values-nodejs-javascript
+  return crypto.randomBytes(Math.ceil(len / 2))
+    .toString('hex') // convert to hexadecimal format
+    .slice(0, len);   // return required number of characters
 }
 
 var valueHEX = randomValueHex(7)  // value 'ad0fc8c'
@@ -41,7 +41,7 @@ app.prepare().then(() => {
 
   server.post('/upload', function (req, res) {
     console.log(req.body);
-    
+
     if (!req.files)
       return res.status(400).send('No files were uploaded.');
 
@@ -101,6 +101,28 @@ app.prepare().then(() => {
 
       res.send('File uploaded to ' + __dirname + '/public/' + fileNameRefined + ' <a href="http://localhost:3000">Home</a>');
 
+    });
+  });
+
+  server.get('/listlatest', function (req, res) {
+    console.log("running /listlatest");
+    let userfiles = 'userfiles';
+    let playVideo = req.params.video;
+
+    db.loadDatabase({}, function () {
+      let _collection = db.getCollection(userfiles);
+
+      if (!_collection) {
+        console.log("Collection %s does not exist. Creating ...", userfiles);
+        _collection = db.addCollection(userfiles);
+      }
+      var results = _collection.find({ 'bookYear': { '$gt': 2000 } });   //  this makes it list all videos newer than 2000
+      if ((results !== 'undefined') && (results !== null)) {
+        res.send(results);
+      }
+      else {
+        res.send({ content: 'none' });
+      }
     });
   });
 
