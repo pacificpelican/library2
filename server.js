@@ -13,7 +13,7 @@ const bodyParser = require('body-parser');
 var loki = require('lokijs')
 var crypto = require('crypto');
 
-var db = new loki(__dirname + 'db/inittestLOPdb.json')
+var db = new loki(__dirname + '/db/lop.json')
 
 function randomValueHex (len) { //  via https://blog.tompawlak.org/generate-random-values-nodejs-javascript
   return crypto.randomBytes(Math.ceil(len/2))
@@ -84,8 +84,6 @@ app.prepare().then(() => {
       if (err)
         return res.status(500).send(err);
 
-      res.send('File uploaded to ' + __dirname + '/public/' + fileNameRefined + ' <a href="http://localhost:3000">Home</a>');
-
       let userfiles = 'userfiles';
 
       db.loadDatabase({}, function () {
@@ -100,6 +98,8 @@ app.prepare().then(() => {
 
         db.saveDatabase();
       });
+
+      res.send('File uploaded to ' + __dirname + '/public/' + fileNameRefined + ' <a href="http://localhost:3000">Home</a>');
 
     });
   });
