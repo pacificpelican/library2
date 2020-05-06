@@ -1,6 +1,6 @@
 {
   "name": "library2",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "email": "d@danmckeown.info",
     "name": "Dan McKeown",
@@ -14,9 +14,11 @@
   "dependencies": {
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
-    "next": "latest",
+    "next": "^9.3.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.0.0"
+    "react-helmet": "^6.0.0",
+    "body-parser": "^1.19.0",
+    "express-fileupload": "^1.1.7-alpha.3"
   }
 }

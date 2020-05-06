@@ -2,6 +2,7 @@ import React from "react";
 import {Helmet} from "react-helmet";
 
 import Upload from "../components/uploadForm";
+import VreelUpload from "../components/upload";
 
 function indexPage() {
   return (
@@ -51,6 +52,10 @@ function indexPage() {
             </article>
           </section>
         </main>
+
+        <div>
+          <VreelUpload />
+        </div>
 
         <main id="carousel">
           <section id="newsAndEvents">

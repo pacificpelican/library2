@@ -8,7 +8,7 @@ function uploadForm() {
       </h3>
       <form id="bookUpload" action="/post">
         <article className="inputWrapper">
-          <span className="formInputDescription">user name:</span> <input id="username" type="text" name="username" value={username} />
+          <span className="formInputDescription">user name:</span> <input id="username" type="text" name="username" />
         </article>
         <article className="inputWrapper">
           <span className="formInputDescription">name of work:</span> <input id="name" type="text" name="title" />
