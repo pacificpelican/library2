@@ -10,6 +10,19 @@ const fileUpload = require('express-fileupload')
 
 const bodyParser = require('body-parser');
 
+var loki = require('lokijs')
+var crypto = require('crypto');
+
+var db = new loki(__dirname + 'db/inittestLOPdb.json')
+
+function randomValueHex (len) { //  via https://blog.tompawlak.org/generate-random-values-nodejs-javascript
+  return crypto.randomBytes(Math.ceil(len/2))
+      .toString('hex') // convert to hexadecimal format
+      .slice(0,len);   // return required number of characters
+}
+
+var valueHEX = randomValueHex(7)  // value 'ad0fc8c'
+
 app.prepare().then(() => {
   const server = express()
 
@@ -38,10 +51,13 @@ app.prepare().then(() => {
 
     let sampleFileName = req.files.sampleFile.name;
     let fileEnding = sampleFileName.substr(sampleFileName.length - 3);
+    if (fileEnding === 'pub') {  //  probably epub instead of pdf
+      fileEnding = sampleFileName.substr(sampleFileName.length - 4);
+    }
 
     var actor1 = req.body;
 
-    let fileName = actor1.vActor1 + "-" + actor1.vYear + "-" + actor1.vName + "-" + valueHEX + "." + fileEnding;
+    let fileName = actor1.bookTitle + "-" + actor1.bookYear + "-" + actor1.bookAuthor + "-" + valueHEX + "." + fileEnding;
 
     var fileNameRefined = fileName.split(' ').join('');
     fileNameRefined = fileNameRefined.split(',').join('');
@@ -61,14 +77,14 @@ app.prepare().then(() => {
     actor1.vFile = fileNameRefined;
 
     console.log(actor1);
-    console.log(actor1.vActor1);
+    console.log(actor1.bookTitle);
 
     // Use the mv() method to upload the file to the '/public' directory
-    sampleFile.mv(__dirname + '/public/' + fileNameRefined, function (err) {
+    sampleFile.mv(__dirname + '/public/uploads/' + fileNameRefined, function (err) {
       if (err)
         return res.status(500).send(err);
 
-      res.send('File uploaded to ' + __dirname + '/public/' + fileNameRefined + ' <a href="http://localhost:3004">Home</a>');
+      res.send('File uploaded to ' + __dirname + '/public/' + fileNameRefined + ' <a href="http://localhost:3000">Home</a>');
 
       let userfiles = 'userfiles';
 
