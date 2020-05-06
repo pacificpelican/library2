@@ -13,10 +13,10 @@ const bodyParser = require('body-parser');
 app.prepare().then(() => {
   const server = express()
 
-  server.use(fileUpload());
-
   server.use(bodyParser.urlencoded({ extended: true }))
-  server.use(bodyParser.json())
+  // server.use(bodyParser.json())
+
+  server.use(fileUpload());
 
   server.get('/a', (req, res) => {
     return app.render(req, res, '/a', req.query)
@@ -28,8 +28,7 @@ app.prepare().then(() => {
 
   server.post('/upload', function (req, res) {
     console.log(req.body);
-    console.log(req);
-    //console.log(req);
+    
     if (!req.files)
       return res.status(400).send('No files were uploaded.');
 
