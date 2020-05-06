@@ -3836,6 +3836,11 @@ object.values@^1.1.0:
     function-bind "^1.1.1"
     has "^1.0.3"
 
+okconceptviewer@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/okconceptviewer/-/okconceptviewer-1.0.1.tgz#cffca62cef8977472ccdf2a85b5a4dea028274b7"
+  integrity sha512-KTy5xzle7A+w/Ieg9zfeKrTWnr5vv4/oXPXn0VnwRjpO/mtv+sVSeXdleGb87qXWFOTquRw3Ib9f9ZatXI+1Jg==
+
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
