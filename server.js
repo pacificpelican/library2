@@ -1,19 +1,21 @@
-const express = require('express')
-const next = require('next')
+const express = require('express');
+const next = require('next');
 
-const port = parseInt(process.env.PORT, 10) || 3000
-const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dev })
-const handle = app.getRequestHandler()
+const port = parseInt(process.env.PORT, 10) || 3000;
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev });
+const handle = app.getRequestHandler();
 
-const fileUpload = require('express-fileupload')
+const fileUpload = require('express-fileupload');
 
 const bodyParser = require('body-parser');
 
-var loki = require('lokijs')
+var loki = require('lokijs');
 var crypto = require('crypto');
 
-var db = new loki(__dirname + '/db/lop.json')
+var db = new loki(__dirname + '/db/lop.json');
+
+let locatorScale = 10000000;
 
 function randomValueHex(len) { //  via https://blog.tompawlak.org/generate-random-values-nodejs-javascript
   return crypto.randomBytes(Math.ceil(len / 2))
@@ -83,6 +85,8 @@ app.prepare().then(() => {
     console.log(actor1);
     console.log(actor1.bookTitle);
 
+    let serverObject = Object.assign(actor1, {locator: Date.now().toString() + Math.floor(Math.random() * locatorScale + 1), created_at_time: Date.now()})
+
     // Use the mv() method to upload the file to the '/public' directory
     sampleFile.mv(__dirname + '/public/uploads/' + fileNameRefined, function (err) {
       if (err)
@@ -98,7 +102,7 @@ app.prepare().then(() => {
           _collection = db.addCollection(userfiles);
         }
 
-        _collection.insert(actor1);
+        _collection.insert(serverObject);
 
         db.saveDatabase();
       });
