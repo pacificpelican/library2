@@ -29,7 +29,7 @@ function indexPage() {
             </ul>
           </section>
           <section id="topTier--search-section">
-            🔍
+            <a href="/Desk">🔍</a>
             </section>
         </header>
 
