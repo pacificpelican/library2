@@ -14,6 +14,8 @@ const bodyParser = require('body-parser');
 
 const convertObj = require("object-array-converter");
 
+var ObjectID = require("bson-objectid");
+
 var loki = require('lokijs');
 var crypto = require('crypto');
 
@@ -236,7 +238,9 @@ app.prepare().then(() => {
 
     let LC1 = Date.now().toString() + Math.floor(Math.random() * locatorScale + 1) + valueHEX;
 
-    let fileName = actor1.bookTitle + "-" + actor1.bookYear + "-" + actor1.bookAuthor + "-" + LC1 + "." + fileEnding;
+    let LC2 = ObjectID() +  "-" + LC1.toString();
+
+    let fileName = actor1.bookTitle + "-" + actor1.bookYear + "-" + actor1.bookAuthor + "-" + LC2 + "." + fileEnding;
 
     var fileNameRefined = fileName.split(' ').join('');
     fileNameRefined = fileNameRefined.split(',').join('');
@@ -262,7 +266,7 @@ app.prepare().then(() => {
     console.log(actor1);
     console.log(actor1.bookTitle);
 
-    let serverObject = Object.assign(actor1, { locator: LC1, created_at_time: Date.now() })
+    let serverObject = Object.assign(actor1, { locator: LC2, created_at_time: Date.now() })
 
     // Use the mv() method to upload the file to the '/public' directory
     sampleFile.mv(__dirname + '/public/uploads/' + fileNameRefined, function (err) {

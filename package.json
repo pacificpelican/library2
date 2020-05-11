@@ -1,6 +1,6 @@
 {
   "name": "library2",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "author": {
     "email": "d@danmckeown.info",
     "name": "Dan McKeown",
@@ -26,6 +26,7 @@
     "object-array-converter": " ^1.0.1",
     "grommet": "^2.6.5",
     "styled-components": "^4.2.0",
-    "@smooth-ui/core-sc": "^10.0.4"
+    "@smooth-ui/core-sc": "^10.0.4",
+    "bson-objectid": "^1.3.0"
   }
 }

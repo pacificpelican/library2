@@ -86,6 +86,7 @@ class SpreadsheetCoreRecursiveClick extends Component {
                 let newdataString = newdata.toString();
                 retSet.push(
                   <span key={valArr[i]} className="valSheetRow">
+                    <span>{valArr[i] + " "}</span>
                     <Link
                       href={{
                         pathname: "/Edit2",
@@ -98,7 +99,7 @@ class SpreadsheetCoreRecursiveClick extends Component {
                         }
                       }}
                     >
-                      <a>{valArr[i] + " "}</a>
+                      <a className="editLink">(edit)</a>
                     </Link>{" "}
                     <Link
                       href={{
@@ -165,6 +166,9 @@ class SpreadsheetCoreRecursiveClick extends Component {
           span.valSheetRow a {
             text-decoration: none;
             color: black;
+          }
+          a.editLink {
+            font-size: calc(0.8rem);
           }
         `}</style>
       </div>
