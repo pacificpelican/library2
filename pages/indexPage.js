@@ -20,7 +20,7 @@ function indexPage() {
               <li>
                 <a href="http://gallery.sf3am.com">Exhibitions</a></li>
               <li>
-                <a href="https://sf3am.com">Collections</a>
+                <a href="#upload">Upload</a>
               </li>
               <li><a href="https://pacificio.com/training">Programs</a></li>
               <li>
@@ -57,7 +57,7 @@ function indexPage() {
           <Latest />
         </section>
 
-        <div>
+        <div id="upload">
           <VreelUpload />
         </div>
 
