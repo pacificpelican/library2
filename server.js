@@ -1,7 +1,9 @@
 const express = require('express');
 const next = require('next');
 
-const port = parseInt(process.env.PORT, 10) || 3000;
+let lopPort = 3020;
+
+const port = parseInt(process.env.PORT, 10) || lopPort;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -107,7 +109,7 @@ app.prepare().then(() => {
         db.saveDatabase();
       });
 
-      res.send('File uploaded to ' + __dirname + '/public/' + fileNameRefined + ' <a href="http://localhost:3000">Home</a>');
+      res.send('File uploaded to ' + __dirname + '/public/' + fileNameRefined + ' <a href="http://localhost:3020">Home</a>');
 
     });
   });
@@ -124,7 +126,7 @@ app.prepare().then(() => {
         console.log("Collection %s does not exist. Creating ...", userfiles);
         _collection = db.addCollection(userfiles);
       }
-      var results = _collection.find({ 'bookYear': { '$gt': 2000 } });   //  this makes it list all videos newer than 2000
+      var results = _collection.find({ 'bookYear': { '$gt': 1923 } });   //  this makes it list all videos newer than 2000
       if ((results !== 'undefined') && (results !== null)) {
         res.send(results);
       }
