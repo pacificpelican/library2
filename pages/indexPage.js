@@ -15,16 +15,17 @@ function indexPage() {
           <section id="topTier--nav-section">
             <ul id="topTier--nav-section___nav">
               <li>
-                <a href="https://pacificio.com">Visit</a>
+                <a href="#latest">Visit</a>
               </li>
               <li>
                 <a href="http://gallery.sf3am.com">Exhibitions</a></li>
               <li>
-                <a href="#upload">Upload</a>
-              </li>
-              <li><a href="https://pacificio.com/training">Programs</a></li>
+                <a href="https://pacificio.com/training">Programs</a></li>
               <li>
                 <a href="https://djmblog.com/support">Support</a>
+              </li>
+              <li>
+                <a href="#upload">Upload</a>
               </li>
             </ul>
           </section>
@@ -53,7 +54,7 @@ function indexPage() {
           </section>
         </main>
 
-        <section>
+        <section id="latest">
           <Latest />
         </section>
 
