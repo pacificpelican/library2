@@ -128,6 +128,7 @@ function indexPage() {
       </div>
       <Helmet>
         <title>The Library of Progress</title>
+        <link rel="icon" href="favicon.ico" />
       </Helmet>
       <style>
         {`

@@ -8,6 +8,7 @@
 
 - upload files (preferably epubs and pdfs) which will go to the /public/uploads directory
 - meta-data about the post is saved to /db/lop.json using [LokiJS](http://techfort.github.io/LokiJS/)
+- View recent uploads and download files or share perma-links
 
 ## How to set up
 

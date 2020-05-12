@@ -24,7 +24,7 @@ class Upload extends Component {
 						<section className="expense-form"><span className="input-span">book year: </span><input id="input-date" type="text" ref={this.input4} name="bookYear" /></section>
 						{/* <section className="bookNotesText"><span className="input-text">notes: </span><texarea id="notesAboutBook" ref={this.sparknotes} name="bookNotes" /></section> */}
 						<section className="expense-form"><span className="input-span">book url: </span><input id="payee-description" type="text" ref={this.input2} name="bookUrl" /></section>
-						<section className="expense-form"><span className="input-span">book author: </span><input required id="input-description" type="text" ref={this.input3} name="bookAuthor" /></section>
+						<section className="expense-form"><span className="input-span">book author: </span><input id="input-description" type="text" ref={this.input3} name="bookAuthor" /></section>
 						<aside id="bookNotesAside"><span>notes:</span> <textarea ref={this.sparknotes} name="bookNotes" /></aside>
 						<input id="submitter" type="submit" value="Upload!" />
 					</form>

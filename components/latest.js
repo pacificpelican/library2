@@ -1,15 +1,12 @@
 import React, { Component, useEffect, useState } from "react";
-import Okviewer from "okconceptviewer";
 
-let latestItems = [];
-
-let urlBase = 'http://localhost:3020/uploads/';
+const urlBase = 'http://localhost:3020/uploads/';
+const urlPermalinkBase = 'http://localhost:3020/permalink?query=';
 
 function latest() {
   let [item, setItem] = useState([]);
- // let [link, setLink] = useState('TheGirlOnTheTrain-2015-PaulaHawkins-5eba1bca4d8e7667e241a188-15892551147642430458b499c8a.epub');
   useEffect(() => {   
-    let dest = '/listlatest';
+    let dest = '/listbooks';
 
     fetch(dest, { method: "get" })
       .then(function (response) {
@@ -24,7 +21,6 @@ function latest() {
       .then(function (myReturn) {
         console.log(myReturn);
         setItem(myReturn);
-        //latestItems = myReturn;
       });
 
   }, [])
@@ -37,7 +33,7 @@ function latest() {
         {item.map(function(ibook) {
           console.log(ibook);
           return(
-            <li><span className="bookTitle">{ibook.bookTitle}</span> <span className="divider">|</span> <span className="link"><a href={urlBase + ibook.vFile}>link</a></span></li>
+          <li key={ibook.bookTitle}><span className="bookTitle">{ibook.bookTitle}</span> <span className="divider">|</span> <span id="author">{ibook.bookAuthor ? ibook.bookAuthor : '(author missing)'}</span> <span className="divider">|</span> <span id="author">{ibook.bookYear ? ibook.bookYear : '(year missing)'}</span> <span className="link"><a href={urlPermalinkBase + ibook.locator}>link</a></span> · <span className="download"><a href={urlBase + ibook.vFile}>download</a></span></li>
           )
         })}
       </ul>
@@ -55,6 +51,7 @@ function latest() {
           font-size: calc(1.314rem);
         }
         ul#booksCollection li {
+          margin-bottom: calc(1vh + 5pt);
           font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
           font-size: calc(1.127rem);
         }
