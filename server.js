@@ -316,9 +316,8 @@ app.prepare().then(() => {
   });
 
   server.get('/listbooks', function (req, res) {
-    console.log("running /listlatest");
+    console.log("running /listbooks");
     let userfiles = 'userfiles';
-    let playVideo = req.params.video;
 
     db.loadDatabase({}, function () {
       let _collection = db.getCollection(userfiles);
@@ -327,7 +326,7 @@ app.prepare().then(() => {
         console.log("Collection %s does not exist. Creating ...", userfiles);
         _collection = db.addCollection(userfiles);
       }
-      var results = _collection.find();   //  this makes it list all books newer than 1923
+      var results = _collection.find();
       if ((results !== 'undefined') && (results !== null)) {
         let limtedReturn = results.slice(Math.max(results.length - 20, 0))
         res.send(limtedReturn);
@@ -392,7 +391,6 @@ app.prepare().then(() => {
       apiDataDB1 = retData;
 
       let respObj = Object.assign({}, apiDataDB1);
-      //  let respArr = convertObj.toArray(respObj);
       res.send(respObj);
     });
   });

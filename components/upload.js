@@ -63,7 +63,7 @@ class Upload extends Component {
 							width: calc(10pt + 8vw);
 							height: calc(25pt + 1vh);
 							font-size: calc(1.2rem);
-							background: #f0f5f4;
+							background-color: #f0f5f4;
 						}
 						label#quantity {
 							display: block;
@@ -84,6 +84,7 @@ class Upload extends Component {
 							width: calc(10pt + 33vw);
 							height: calc(25pt + 12vh);
 							font-size: calc(1.2rem);
+							background-color: #f0f5f4;
 						}
 						input#submitter {
 							margin-top: calc(5pt + 1vh);

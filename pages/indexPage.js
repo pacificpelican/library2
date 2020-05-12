@@ -18,11 +18,11 @@ function indexPage() {
                 <a href="#latest">Visit</a>
               </li>
               <li>
-                <a href="http://gallery.sf3am.com">Exhibitions</a></li>
+                <a href="#carousel">Exhibitions</a></li>
               <li>
-                <a href="https://pacificio.com/training">Programs</a></li>
+                <a href="http://gallery.sf3am.com">Gallery</a></li>
               <li>
-                <a href="https://djmblog.com/support">Support</a>
+                <a href="https://djmblog.com/help">Support</a>
               </li>
               <li>
                 <a href="#upload">Upload</a>
@@ -45,7 +45,7 @@ function indexPage() {
             </article>
             <article id="main-view--section-img___article-caption">
               <h4 id="main-view--section-img___article-caption____h4">
-                Powered by <a href="https://reactjs.org">react</a>, <a href="">JSX</a>, and <a href="">Webpack</a>
+                Powered by <a href="https://reactjs.org">react</a>, <a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a>, and <a href="https://webpack.js.org/">Webpack</a>
               </h4>
               <h2 id="main-view--section-img___article-caption____h2">
                 The Library of Progress is a collection for 21st Century Knowledge and Understanding
@@ -66,42 +66,42 @@ function indexPage() {
           <section id="newsAndEvents">
             <article id="box1">
               <header id="newsAndEvents--box1__header"></header>
-              <h3>Alaska Wildlife</h3>
+              <h3><i><a href="http://localhost:3020/permalink?query=5ebadb3e5744457d66de32f1-15893041260085604056f14b6a2">Ulysses</a></i> </h3>
               <aside>
-                Friday, May 10
-                </aside>
+                by James Joyce
+              </aside>
               <main>
-                10:30 am - 12:00 pm
-                </main>
+                1922
+              </main>
               <p>
-                <a href="http://gallery.sf3am.com/photo/heron-in-Ketchikan-Creek--Alaska.jpg/59063719706064/">The Egrets and Herons of the North</a>
+                <a href="https://www.bl.uk/20th-century-literature/articles/an-introduction-to-ulysses">"James Joyce's Ulysses may be more talked about than read."</a>
               </p>
             </article>
             <article id="box2">
               <header id="newsAndEvents--box2__header"></header>
-              <h3>Panel Discussion on whether to retire term "trash raccoon"</h3>
+              <h3><i><a href="http://localhost:3020/permalink?query=5ebae0145744457d66de32f2-1589305364386191072f14b6a2">Wuthering Heights</a></i></h3>
               <aside>
-                Friday, May 10
-                </aside>
+                by Emily Brontë
+              </aside>
               <main>
-                11:00 am - 12:00 pm
-                </main>
+                1847
+              </main>
               <p>
-                <a href="#">Little theater</a>
+                <a href="https://www.sparknotes.com/lit/wuthering/summary/">"When Heathcliff returns, he immediately sets about seeking revenge on all who have wronged him."</a>
               </p>
             </article>
             <article id="box3">
               <header id="newsAndEvents--box3__header"></header>
-              <h3>Raccoons and Trash Cans: Symbiosis or Imbalanced Ecosystem Marker</h3>
+              <h3><i><a href="http://localhost:3020/permalink?query=5ebae44a5744457d66de32f3-15893064423036075459f14b6a2">Eloquent JavaScript</a></i></h3>
               <span>  </span>
               <aside>
-                Friday, May 11
-                </aside>
+                by Marijn Haverbeke
+              </aside>
               <main>
-                1:00 pm - 3:00 pm
-                </main>
+                2015
+              </main>
               <p>
-                <a href="http://djmcloud.danieljmckeown.com/blog/2011/06/raccoon-raid/">Forest at Discovery Park</a>
+                <a href="https://eloquentjavascript.net/">"Analogies that try to compare programs to objects we are familiar with tend to fall short."</a>
               </p>
             </article>
           </section>
@@ -109,10 +109,10 @@ function indexPage() {
 
         <main id="grid">
           <section id="donate">
-            <span>donate</span>
+            <span><a href="https://djmblog.com/donate">donate</a></span>
           </section>
           <section id="store">
-            <span>store</span>
+            <span><a href="https://altaredwood.com">store</a></span>
           </section>
           <section id="cafe">
             <span>cafe</span>
@@ -172,6 +172,12 @@ function indexPage() {
           footer#readMore {
             margin-block-start: calc(2vh + 10px);
           }
+          footer#info {
+            font-family: var(--contentFonts, 'Helvetica');
+          }
+          footer#info a {
+            color: inherit;
+          }
           section#newsAndEvents {
             margin-block-start: calc(2vh + 10px);
           }
@@ -180,19 +186,19 @@ function indexPage() {
           }
           header#newsAndEvents--box1__header {
             margin-inline-start: calc(0px);
-            height: calc(10vh + 100px);
+            height: calc(18vh + 100px);
             background: red;
-            background-image: url("./static/img/waterfall-near-Juneau--Alaska.jpg");
+            background-image: url("./img/aceofclubs.jpg");
           }
           header#newsAndEvents--box2__header {
-            height: calc(10vh + 100px);
+            height: calc(18vh + 100px);
             background: blue;
-            background-image: url("./static/img/FIREbyDanMcKeown2017.jpg");
+            background-image: url("./img/Emily-Bront--portrait-for-007.jpg");
           }
           header#newsAndEvents--box3__header {
-            height: calc(10vh + 100px);
+            height: calc(18vh + 100px);
             background: green;
-            background-image: url("./static/img/raccoon-in-trash-can-2011byDanielJMcKeown-500x500.jpg");
+            background-image: url("./img/EloquentJavaScript-cover-small.jpg");
           }
           section#donate,
           section#store,
@@ -202,13 +208,26 @@ function indexPage() {
             background: red;
           }
           section#store {
-            background-image: url("./img/photo-1550490754-1eb91754f4fc.jpg");
+            background-image: url("./img/store2.jpg");
           }
           section#cafe {
-            background-image: url("../static/img/jonas-allert-v4xMAiisCx0-unsplash.jpg");
+            background-image: url("./img/espresso.jpg");
           }
           section#donate {
-            background-image: url("./img/talia-cohen-30431-unsplash.jpg");
+            background-image: url("./img/cash.jpg");
+          }
+          div#upload {
+            background: #f7f3f0;
+            margin-bottom: 10pt;
+            margin-top: 12pt;
+          }
+          main#carousel p a {
+            text-decoration: none;
+            color: #b0b4b5;
+          }
+          main#carousel h3 a {
+            text-decoration: overline;
+            color: inherit;
           }
           @media (max-width: 779px) {
             section#donate,
@@ -277,7 +296,7 @@ function indexPage() {
               margin-inline-end: calc(2vw + 10px);
             }
           }
-          main#grid {
+          main#grid, main#grid a {
             color: white;
             font-family: var(--uiFonts, monospace);
           }
