@@ -1,3 +1,5 @@
+//  depracated in v1.0.1
+
 let username = '';
 
 function uploadForm() {

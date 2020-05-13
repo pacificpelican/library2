@@ -29,6 +29,27 @@ function randomValueHex(len) { //  via https://blog.tompawlak.org/generate-rando
     .slice(0, len);   // return required number of characters
 }
 
+function commaParseTags(str) {  //  convert a comma separated string into an array of tags (as strings)
+  let retArr = [];
+  let tempStr = '';
+  for (var i = 0; i < str.length; i++) {
+    if (str.charAt(i) === ' ') {
+      //  do nothing
+    }
+    else if (str.charAt(i) === ',') {
+      retArr.push(tempStr);
+      tempStr = '';
+    }
+    else {
+      tempStr = tempStr + str.charAt(i).toString();
+    }
+  }
+  if (tempStr !== '') {
+    retArr.push(tempStr);
+  }
+  return retArr;
+}
+
 var valueHEX = randomValueHex(7)  // value 'ad0fc8c'
 
 function postDataWildcard(
@@ -266,7 +287,14 @@ app.prepare().then(() => {
     console.log(actor1);
     console.log(actor1.bookTitle);
 
-    let serverObject = Object.assign(actor1, { locator: LC2, created_at_time: Date.now() })
+    let tags = commaParseTags(actor1.bookTags);
+
+    console.log("tags: ");
+    console.log(tags);
+
+    delete actor1.bookTags;
+
+    let serverObject = Object.assign(actor1, { locator: LC2, created_at_time: Date.now(), tags: [tags] })
 
     // Use the mv() method to upload the file to the '/public' directory
     sampleFile.mv(__dirname + '/public/uploads/' + fileNameRefined, function (err) {

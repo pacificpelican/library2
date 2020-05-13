@@ -10,6 +10,7 @@ class Upload extends Component {
 		this.input3 = React.createRef();
 		this.input4 = React.createRef();
 		this.sparknotes = React.createRef();
+		this.inputX = React.createRef();
 	}
 
 	render() {
@@ -25,6 +26,7 @@ class Upload extends Component {
 						{/* <section className="bookNotesText"><span className="input-text">notes: </span><texarea id="notesAboutBook" ref={this.sparknotes} name="bookNotes" /></section> */}
 						<section className="expense-form"><span className="input-span">book url: </span><input id="payee-description" type="text" ref={this.input2} name="bookUrl" /></section>
 						<section className="expense-form"><span className="input-span">book author: </span><input id="input-description" type="text" ref={this.input3} name="bookAuthor" /></section>
+						<section className="expense-form"><span className="input-span">book tags: </span><input id="input-tags" type="array" ref={this.inputX} name="bookTags" /></section>
 						<aside id="bookNotesAside"><span>notes:</span> <textarea ref={this.sparknotes} name="bookNotes" /></aside>
 						<input id="submitter" type="submit" value="Upload!" />
 					</form>
