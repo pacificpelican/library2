@@ -20,13 +20,12 @@ class Upload extends Component {
 				<div>
 
 					<form id="expense" action="http://localhost:3020/upload" method="post" encType="multipart/form-data">
-						<section className="expense-form"><span className="input-span">book file: </span><input required type="file" ref={this.fileInput} name="sampleFile" /></section>
-						<section className="expense-form"><span className="input-span">book title: </span><input required id="input-amount" type="text" ref={this.input} name="bookTitle" /></section>
-						<section className="expense-form"><span className="input-span">book year: </span><input id="input-date" type="text" ref={this.input4} name="bookYear" /></section>
-						{/* <section className="bookNotesText"><span className="input-text">notes: </span><texarea id="notesAboutBook" ref={this.sparknotes} name="bookNotes" /></section> */}
-						<section className="expense-form"><span className="input-span">book url: </span><input id="payee-description" type="text" ref={this.input2} name="bookUrl" /></section>
-						<section className="expense-form"><span className="input-span">book author: </span><input id="input-description" type="text" ref={this.input3} name="bookAuthor" /></section>
-						<section className="expense-form"><span className="input-span">book tags: </span><input id="input-tags" type="array" ref={this.inputX} name="bookTags" /></section>
+						<section className="expense-form"><span className="input-span">book file: </span><input required type="file" ref={this.fileInput} name="sampleFile" /> <span className="sideNote"></span></section>
+						<section className="expense-form"><span className="input-span">book title: </span><input required id="input-amount" type="text" ref={this.input} name="bookTitle" /> <span className="sideNote"></span></section>
+						<section className="expense-form"><span className="input-span">book year: </span><input id="input-year" type="text" ref={this.input4} name="bookYear" /></section>
+						<section className="expense-form"><span className="input-span">book url: </span><input id="input-url" type="text" ref={this.input2} name="bookUrl" /></section>
+						<section className="expense-form"><span className="input-span">book author: </span><input id="input-author" type="text" ref={this.input3} name="bookAuthor" /></section>
+						<section className="expense-form"><span className="input-span">book tags: </span><input id="input-tags" type="array" ref={this.inputX} name="bookTags" /> <span className="sideNote" id="commaSeparated">comma separated</span></section>
 						<aside id="bookNotesAside"><span>notes:</span> <textarea ref={this.sparknotes} name="bookNotes" /></aside>
 						<input id="submitter" type="submit" value="Upload!" />
 					</form>
@@ -47,6 +46,10 @@ class Upload extends Component {
 						margin-bottom: calc(1pt + 2.4vh);
 						font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 						font-size: calc(1.4rem);
+					}
+					span.sideNote {
+						color: #a3919f;
+						font-size: calc(0.9rem);
 					}
 					@media (max-width: 800px) {
 						button {
