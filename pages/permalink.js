@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
+import {Helmet} from "react-helmet";
 
 const ReactMarkdown = require('react-markdown');
  
@@ -45,7 +46,11 @@ function permalink(props) {
       <h3>Book Record {item.locator}</h3>
 
       <ul id="booksCollection">
-        <li key={item.bookTitle}><span className="bookTitle">{item.bookTitle ? item.bookTitle : '(no book found)'}</span> <span className="divider">|</span> <span id="author">{item.bookAuthor ? item.bookAuthor : '(author missing)'}</span> <span className="divider">|</span> <span id="author">{item.bookYear ? item.bookYear : '(year missing)'}</span> <span className="divider">|</span> <span className="bookLink">{item.bookUrl ? <a className="linkLink" href={item.bookUrl}>🔗</a> : '(no url found)'}</span> <span className="divider">|</span> <span className="link"><a href={urlBase + item.vFile}>download</a></span></li>
+        <li key={item.bookTitle}><span className="bookTitle">{item.bookTitle ? item.bookTitle : '(no book found)'}</span> 
+        <span className="divider">|</span> <span id="author">{item.bookAuthor ? item.bookAuthor : '(author missing)'}</span> 
+        <span className="divider">|</span> <span id="author">{item.bookYear ? item.bookYear : '(year missing)'}</span> 
+        <span className="divider">|</span> <span className="bookLink">{item.bookUrl ? <a className="linkLink" href={item.bookUrl}>🔗</a> : '(no url found)'}</span> 
+        <span className="divider">|</span> <span className="link"><a href={urlBase + item.vFile}>download</a></span></li>
       </ul>
 
       <p id="bookNotes">
@@ -55,6 +60,13 @@ function permalink(props) {
       <footer id="permalink-footer">
         <span id="lopItemFooterSpan"><a href="../../..">The Library of Progress</a></span>
       </footer>
+
+      <Helmet>
+        <title>
+        {`${item.bookTitle} | The Library of Progress`}
+        
+        </title>
+      </Helmet>
 
       <style>{`
         div#latestBooks {
