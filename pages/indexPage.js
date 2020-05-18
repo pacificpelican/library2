@@ -109,7 +109,7 @@ function indexPage() {
 
         <main id="grid">
           <section id="donate">
-            <span><a href="https://djmblog.com/donate">donate</a></span>
+            <span><a href="https://pacificio.com/pay">donate</a></span>
           </section>
           <section id="store">
             <span><a href="https://altaredwood.com">store</a></span>
@@ -122,7 +122,7 @@ function indexPage() {
         <footer id="info">
           <aside id="copyright">
             <span id="designed"
-            >(c) 2020 Created by <a href="https://danieljmckeown.com">Daniel J. McKeown</a> in Washington State</span>
+            >(c) 2020 Created by <a href="https://danieljmckeown.com">Daniel J. McKeown</a> in Washington state</span>
           </aside>
         </footer>
       </div>
