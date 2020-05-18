@@ -316,7 +316,7 @@ app.prepare().then(() => {
         db.saveDatabase();
       });
 
-      res.send('File uploaded to ' + __dirname + '/public/' + fileNameRefined + ' <a href="http://localhost:' + lopPort + '">Home</a>');
+      res.send('<section>' + 'File uploaded to ' + __dirname + '/public/' + fileNameRefined + ' <a href="http://localhost:' + lopPort + '">Home</a></section><aside><img src="../img/save.gif" id="save" /></aside><style>img#save {width: calc(65vw)}</style>');
 
     });
   });
