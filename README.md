@@ -13,7 +13,7 @@
 
 ## How to set up
 
-Install it and run (required [NodeJS](https://nodejs.org/en/)):
+### Install it and run (required [NodeJS](https://nodejs.org/en/)):
 
 ```bash
 npm install
@@ -21,6 +21,12 @@ npm run dev
 # or
 yarn install
 yarn run dev
+```
+
+### Visit the site at its port 3020
+
+```bash
+open http://localhost:3020
 ```
 
 ## Info about the create-next-app scaffold: Custom Express Server example
