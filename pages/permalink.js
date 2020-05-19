@@ -47,10 +47,10 @@ function permalink(props) {
 
       <ul id="booksCollection">
         <li key={item.bookTitle}><span className="bookTitle">{item.bookTitle ? item.bookTitle : '(no book found)'}</span> 
-        <span className="divider">|</span> <span id="author">{item.bookAuthor ? item.bookAuthor : '(author missing)'}</span> 
-        <span className="divider">|</span> <span id="author">{item.bookYear ? item.bookYear : '(year missing)'}</span> 
-        <span className="divider">|</span> <span className="bookLink">{item.bookUrl ? <a className="linkLink" href={item.bookUrl}>🔗</a> : '(no url found)'}</span> 
-        <span className="divider">|</span> <span className="link"><a href={urlBase + item.vFile}>download</a></span></li>
+        <span className="divider">{" "}|{" "}</span><span id="author">{item.bookAuthor ? item.bookAuthor : '(author missing)'}</span> 
+        <span className="divider">{" "}|{" "}</span> <span id="year">{item.bookYear ? item.bookYear : '(year missing)'}</span> 
+        <span className="divider">{" "}|{" "}</span> <span className="bookLink">{item.bookUrl ? <a className="linkLink" href={item.bookUrl}>🔗</a> : '(no url found)'}</span> 
+        <span className="divider">{" "}|{" "}</span> <span className="link"><a href={urlBase + item.vFile}>download</a></span></li>
       </ul>
 
       <p id="bookNotes">
@@ -96,6 +96,15 @@ function permalink(props) {
         p#bookNotes {
           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
           font-size: calc(1.014rem);
+        }
+        span.divider {
+          color: azure;
+        }
+        span#author {
+          color: #7c918f;
+        }
+        span#year {
+          color: #303837;
         }
       `}</style>
     </div>
