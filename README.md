@@ -31,4 +31,4 @@ open http://localhost:3020
 
 ## Info about the create-next-app scaffold: Custom Express Server example
 
-* scaffoled with the [Custom server and routing](https://github.com/zeit/next.js#custom-server-and-routing) example with [create-next-app](https://nextjs.org/blog/create-next-app) in 2020
+* The site was scaffoled with the [Custom server and routing](https://github.com/zeit/next.js#custom-server-and-routing) example with [create-next-app](https://nextjs.org/blog/create-next-app) in 2020; this provided a starting point for developing the React components and Express routes that make up the functionality of this tool.

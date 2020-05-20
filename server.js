@@ -355,9 +355,9 @@ app.prepare().then(() => {
         _collection = db.addCollection(userfiles);
       }
       var results = _collection.chain().find().limit(20);
-      console.log(results.collection);
+      console.log(results.collection.data);
       if ((results.collection.data !== 'undefined') && (results.collection.data !== null)) {
-        let limtedReturn = results.collection.data.slice(Math.max(results.length - 20, 0))
+        let limtedReturn = results.collection.data.slice(Math.max(results.collection.data.length - 20, 0))
         res.send(limtedReturn);
       }
       else {
