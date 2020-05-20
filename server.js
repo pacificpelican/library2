@@ -354,10 +354,10 @@ app.prepare().then(() => {
         console.log("Collection %s does not exist. Creating ...", userfiles);
         _collection = db.addCollection(userfiles);
       }
-      var results = _collection.chain().find().limit(20);
-      console.log(results.collection.data);
-      if ((results.collection.data !== 'undefined') && (results.collection.data !== null)) {
-        let limtedReturn = results.collection.data.slice(Math.max(results.collection.data.length - 20, 0))
+      var results = _collection.chain().simplesort("created_at_time", true).limit(20).data();
+      console.log(results);
+      if ((results !== 'undefined') && (results !== null)) {
+        let limtedReturn = results.slice(Math.max(results.length - 25, 0))
         res.send(limtedReturn);
       }
       else {
