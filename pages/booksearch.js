@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
-//  import Okviewer from "okconceptviewer";
 import Booklist from "../components/booklist";
 
 function booksearch(props) {
@@ -18,22 +17,24 @@ function booksearch(props) {
     }
 
   }, [])
-  
+
   const lookUpSearch = () => {
-    let dest = "/booksearch/" + searchedTitle;
-    fetch(dest, { method: "get" })
-      .then(function (response) {
-        if (response.ok) {
-          console.log("response ok");
-          return response.json();
-        } else {
-          throw new Error(response.Error);
-        }
-      })
-      .then(function (myReturn) {
-        console.log(myReturn);
-        setBooks(myReturn);
-      });
+    if (searchedTitle !== '') {
+      let dest = "/booksearch/" + searchedTitle;
+      fetch(dest, { method: "get" })
+        .then(function (response) {
+          if (response.ok) {
+            console.log("response ok");
+            return response.json();
+          } else {
+            throw new Error(response.Error);
+          }
+        })
+        .then(function (myReturn) {
+          console.log(myReturn);
+          setBooks(myReturn);
+        });
+    }
   }
   return (
     <div id="BookSearch-main">
@@ -65,7 +66,6 @@ function booksearch(props) {
 
           <section id="searchOutput_sortedData">
             <Booklist books={books} />
-
           </section>
 
           {/* <section id="searchOutput__ServerData">

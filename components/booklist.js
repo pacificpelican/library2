@@ -10,7 +10,7 @@ function booklist(props) {
 
   return(
     <div id="latestBooks">
-      <h3 className="booklist__h3">Books</h3>
+      {/* <h3 className="booklist__h3">Books</h3> */}
       
       <ul id="booksCollection">
         {props.books.map(function(ibook) {
