@@ -366,6 +366,33 @@ app.prepare().then(() => {
     });
   });
 
+  server.get('/booksearch/:searchString', function (req, res) {
+    console.log("running /booksearch/" + req.params.searchString.toString());
+    let userfiles = 'userfiles';
+
+    let bookTitle = req.params.searchString;
+
+    db.loadDatabase({}, function () {
+      let _collection = db.getCollection(userfiles);
+
+      if (!_collection) {
+        console.log("Collection %s does not exist. Creating ...", userfiles);
+        _collection = db.addCollection(userfiles);
+      }
+      console.log("book title: " + bookTitle);
+      var results = _collection.chain().find({ bookTitle : bookTitle } ).simplesort("created_at_time", true).limit(20).data();
+      //{'$startsWith': bookTitle }
+      console.log(results);
+      if ((results !== 'undefined') && (results !== null)) {
+        let limtedReturn = results.slice(Math.max(results.length - 25, 0))
+        res.send(limtedReturn);
+      }
+      else {
+        res.send({ content: 'none' });
+      }
+    });
+  });
+
   var apiDataDB = {};
   server.get("/api/1/getdbdata/db/:db/object/:obj", (req, res) => {
     const AccountsDB = new loki(__dirname + "/db/" + req.params.db + ".json");
