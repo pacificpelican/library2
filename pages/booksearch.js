@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import {Helmet} from "react-helmet";
 
-import Okviewer from "okconceptviewer";
+//  import Okviewer from "okconceptviewer";
+import Booklist from "../components/booklist";
 
 function booksearch() {
   const [books, setBooks] = useState([]);
@@ -40,12 +41,21 @@ function booksearch() {
         </header>
 
         <main id="searchOutput">
-          <p>{searchedTitle}</p>
-          <button id="runSearch" onClick={lookUpSearch}>look up</button>
-
-          <section id="searchOutput__ServerData">
-            <Okviewer spreadsheetdata={books} />
+          <section id="commandCenter">
+            <p>{searchedTitle}</p>
+            <button id="runSearch" onClick={lookUpSearch}>look up</button>
           </section>
+
+          <br className="spacer" />
+
+          <section id="searchOutput_sortedData">
+            <Booklist books={books} />
+          
+          </section>
+
+          {/* <section id="searchOutput__ServerData">
+            <Okviewer spreadsheetdata={books} />
+          </section> */}
         </main>
 
 
