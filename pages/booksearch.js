@@ -1,12 +1,24 @@
-import React, { useState } from "react";
-import {Helmet} from "react-helmet";
+import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 //  import Okviewer from "okconceptviewer";
 import Booklist from "../components/booklist";
 
-function booksearch() {
+function booksearch(props) {
   const [books, setBooks] = useState([]);
   const [searchedTitle, setSearchedTitle] = useState('');
+  const goBack = () => {
+    window.history.back();
+  }
+
+  useEffect(() => {
+    if (props.backButtonOff) {
+      let g = document.getElementById('backButton');
+      g.style.display = "none";
+    }
+
+  }, [])
+  
   const lookUpSearch = () => {
     let dest = "/booksearch/" + searchedTitle;
     fetch(dest, { method: "get" })
@@ -29,14 +41,17 @@ function booksearch() {
         <header id="bookSearchHeader">
           <section id="bookSearchHeader__section">
             <h1 id="bookSearchHeader__section__h1">book search</h1>
+            <button id="backButton" href="#" onClick={goBack}>
+              ⬅️ back
+            </button>
             <h4>Look for a book</h4>
           </section>
-        
+
           <section className="book-search-form"><span className="input-span">book title: </span>
 
-          <input type="text" value={searchedTitle} onChange={e => setSearchedTitle(e.target.value)} />
+            <input type="text" value={searchedTitle} onChange={e => setSearchedTitle(e.target.value)} />
 
-          <span className="sideNote"></span></section>
+            <span className="sideNote"></span></section>
 
         </header>
 
@@ -50,7 +65,7 @@ function booksearch() {
 
           <section id="searchOutput_sortedData">
             <Booklist books={books} />
-          
+
           </section>
 
           {/* <section id="searchOutput__ServerData">
@@ -76,201 +91,72 @@ function booksearch() {
               monospace;
             --white-color: white;
           }
-          html {
-            box-sizing: border-box;
+
+          div#BookSearch-main__html_Container {
+            margin-left: 10pt;
+            margin-right: 10pt;
+            margin-top: 11pt;
+            margin-bottom: 9pt;
           }
-          body {
-            margin-left: 0px;
-            margin-right: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            background: white;
+
+          div#BookSearch-main__html_Container h1 {
+            font-family: var(--monoFonts, monospace);
+            font-size: calc(1.2rem);
           }
-          section#main-view--section-img,
-          section#newsAndEvents,
-          main#grid {
-            width: calc(85vw + 20px);
-            margin-left: calc(4.25vw + 15pt);
+
+          div#BookSearch-main__html_Container h4 {
+            font-family: var(--contentFonts, monospace);
+            font-size: calc(0.9rem);
           }
-          a#newsAndEvents--box1__link___1,
-          a#newsAndEvents--box1__link___2,
-          a#newsAndEvents--box2__link___1,
-          a#newsAndEvents--box3__link___1 {
-            background: rgba(106, 158, 182, 0.815);
-            color: var(--white-color, white);
-            padding-inline-start: calc(1vw + 5px);
-            padding-inline-end: calc(1vw + 5px);
-            padding-block-start: calc(0.4vw + 5px);
-            padding-block-end: calc(0.4vw + 5px);
-          }
-          footer#readMore {
-            margin-block-start: calc(2vh + 10px);
-          }
-          footer#info {
-            font-family: var(--contentFonts, 'Helvetica');
-          }
-          footer#info a {
-            color: inherit;
-          }
-          section#newsAndEvents {
-            margin-block-start: calc(2vh + 10px);
-          }
-          section#newsAndEvents img {
-            max-width: 99%;
-          }
-          header#newsAndEvents--box1__header {
-            margin-inline-start: calc(0px);
-            height: calc(18vh + 100px);
-            background: red;
-            background-image: url("./img/aceofclubs.jpg");
-          }
-          header#newsAndEvents--box2__header {
-            height: calc(18vh + 100px);
-            background: blue;
-            background-image: url("./img/Emily-Bront--portrait-for-007.jpg");
-          }
-          header#newsAndEvents--box3__header {
-            height: calc(18vh + 100px);
-            background: green;
-            background-image: url("./img/EloquentJavaScript-cover-small.jpg");
-          }
-          section#donate,
-          section#store,
-          section#cafe {
-            margin-inline-start: calc(2vw);
-            height: calc(10vh + 100px);
-            background: red;
-          }
-          section#store {
-            background-image: url("./img/store2.jpg");
-          }
-          section#cafe {
-            background-image: url("./img/espresso.jpg");
-          }
-          section#donate {
-            background-image: url("./img/cash.jpg");
-          }
-          div#upload {
-            background: #f7f3f0;
-            margin-bottom: 10pt;
-            margin-top: 12pt;
-          }
-          main#carousel p a {
-            text-decoration: none;
-            color: #b0b4b5;
-          }
-          main#carousel h3 a {
-            text-decoration: overline;
-            color: inherit;
-          }
-          @media (max-width: 779px) {
-            section#donate,
-            section#store,
-            section#cafe {
-              width: calc(80vw + 5px);
-            }
-            section#newsAndEvents article {
-              width: calc(80vw + 5px);
-              margin-left: calc(0.5vw);
-              margin-right: calc(0.5vw);
-              background: var(--beigeColor, white);
-              margin-bottom: calc(5px + 2vw);
-              padding-block-start: calc(5px + 1vw);
-              padding-block-end: calc(5px + 2vw);
-            }
-            article#main-view--section-img___article img {
-              width: calc(75vw + 25px);
-            }
-            header#topTier {
-              margin-inline-start: calc(4vw + 10px);
-            }
-            #fContainer {
-              margin-left: calc(-1vw - 5px);
-            }
-          }
-          @media (min-width: 780px) {
-            main#grid {
-              display: flex;
-            }
-            h1#frye {
-              margin-block-start: calc(1vh + 5px);
-            }
-            section#topTier--search-section {
-              margin-block-start: calc(1vh + 5px);
-            }
-            section#donate,
-            section#store,
-            section#cafe {
-              width: calc(30vw + 5px);
-            }
-            ul#topTier--nav-section___nav,
-            section#newsAndEvents {
-              display: flex;
-            }
-            header#topTier {
-              display: flex;
-              justify-content: space-evenly;
-            }
-            section#newsAndEvents article {
-              width: calc(30vw + 20px);
-              margin-left: calc(0.5vw);
-              margin-right: calc(0.5vw);
-              background: var(--beigeColor, white);
-              margin-bottom: calc(5px + 2vw);
-              padding-block-start: calc(5px + 1vw);
-              padding-block-end: calc(5px + 2vw);
-              padding-inline-start: calc(5px + 1vw);
-              padding-inline-end: calc(5px + 2vw);
-            }
-            article#main-view--section-img___article img {
-              width: 98%;
-            }
-            ul#topTier--nav-section___nav li {
-              list-style: none;
-              margin-inline-end: calc(2vw + 10px);
-            }
-          }
-          main#grid, main#grid a {
-            color: white;
+
+          div#BookSearch-main__html_Container span {
             font-family: var(--uiFonts, monospace);
+            font-size: calc(0.88rem);
           }
-          main#grid span {
-            display: block;
-            margin-inline-start: calc(4vw + 80px);
-            margin-block-start: calc(5vw + 30px);
-            font-size: calc(1.4rem);
-          }
-          h2#newsAndEvents--header,
-          h5#ff,
-          footer#purple {
-            text-align: center;
-          }
-          h2#newsAndEvents--header,
-          footer#purple {
-            margin-block-start: calc(25px + 3vh);
-          }
-          header#topTier {
-            font-family: var(--uiFonts, monospace);
-          }
-          main#main-view {
-            font-family: var(--contentFonts, serif);
-          }
-          main#carousel {
-            font-family: var(--displayFonts, sans-serif);
-          }
-          footer#info {
-            background: lightblue;
-            height: calc(50vh);
-            margin-block-start: calc(15px + 5vh);
-            padding-block-start: calc(5px + 1vw);
-            padding-block-end: calc(5px + 2vw);
-            margin-inline-start: calc(5px + 1vw);
-            margin-inline-end: calc(5px + 2vw);
-          }
-          ul#topTier--nav-section___nav a {
-            color: inherit;
-            text-decoration: none;
-          }
+  
+          @media (max-width: 800px) {
+						button#runSearch {
+							width: calc(30pt + 30vw);
+							height: calc(25pt + 1vh);
+							background: #f5f0f0;
+            }
+            button#backButton {
+							width: calc(20pt + 30vw);
+							height: calc(15pt + 1vh);
+							background: cornflowerblue;
+						}
+						div#BookSearch-main__html_Container input {
+							width: calc(30pt + 27vw);
+							height: calc(25pt + 1vh);
+							font-size: calc(1.2rem);
+							background: #f0f1f5;
+							margin-bottom: calc(5pt + 1vh);
+						}
+						label#quantity {
+							display: block;
+						}
+					}
+					@media (min-width: 801px) {
+						button#runSearch {
+							width: calc(30pt + 8vw);
+							height: calc(25pt + 1vh);
+            }
+            button#backButton {
+							width: calc(7pt + 8vw);
+							height: calc(15pt + 1vh);
+              background: #dadee3;
+              color: black
+						}
+						div#BookSearch-main__html_Container input {
+							width: calc(30pt + 18vw);
+							height: calc(25pt + 1vh);
+							font-size: calc(1.2rem);
+							background: #f0f1f5;
+						}
+						input#submitter {
+							margin-top: calc(5pt + 1vh);
+						}
+					}
           `}
       </style>
     </div>

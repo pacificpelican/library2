@@ -22,7 +22,7 @@ function indexPage() {
               <li>
                 <a href="http://gallery.sf3am.com">Gallery</a></li>
               <li>
-                <a href="https://djmblog.com/help">Support</a>
+                <a href="/Desk">Data Desk </a>
               </li>
               <li>
                 <a href="#upload">Upload</a>
@@ -30,8 +30,8 @@ function indexPage() {
             </ul>
           </section>
           <section id="topTier--search-section">
-            <a href="/Desk">🔍</a>
-            </section>
+            <a href="/booksearch">🔍</a>
+          </section>
         </header>
 
         <main id="main-view">

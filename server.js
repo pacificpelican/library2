@@ -380,7 +380,7 @@ app.prepare().then(() => {
         _collection = db.addCollection(userfiles);
       }
       console.log("book title: " + bookTitle);
-      var results = _collection.chain().find({ bookTitle : bookTitle } ).simplesort("created_at_time", true).limit(20).data();
+      var results = _collection.chain().find({ bookTitle : {'$contains': bookTitle } } ).simplesort("created_at_time", true).limit(20).data();
       //{'$startsWith': bookTitle }
       console.log(results);
       if ((results !== 'undefined') && (results !== null)) {
