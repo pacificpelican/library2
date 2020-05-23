@@ -4,6 +4,7 @@ import {Helmet} from "react-helmet";
 import VreelUpload from "../components/upload";
 import Latest from "../components/latest";
 import Booksearch from "./booksearch";
+import Authorsearch from "../components/authorsearch";
 
 function indexPage() {
   return (
@@ -63,8 +64,12 @@ function indexPage() {
           <VreelUpload />
         </div>
 
-        <div id="bookSearch">
+        <div className="searchDiv" id="bookSearch">
           <Booksearch backButtonOff />
+        </div>
+
+        <div className="searchDiv" id="authorSearch">
+          <Authorsearch backButtonOff />
         </div>
 
         <main id="carousel">
@@ -234,13 +239,18 @@ function indexPage() {
             text-decoration: overline;
             color: inherit;
           }
-          div#bookSearch {
-            background: #e6f5f2;
+          .searchDiv {
             margin-left: calc(0.5vw);
             margin-right: calc(0.5vw);
             margin-top: calc(2vh + 3pt);
             padding-top: calc(2vh + 3pt);
             margin-bottom: calc(5px + 2vw);
+          }
+          #bookSearch {
+            background: #d1d9e0;
+          }
+          #authorSearch {
+            background: #e6f5f2;
           }
           @media (max-width: 779px) {
             section#donate,
