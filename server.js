@@ -393,7 +393,7 @@ app.prepare().then(() => {
   });
 
   server.get('/authorsearch/:searchString', function (req, res) {
-    console.log("running /booksearch/" + req.params.searchString.toString());
+    console.log("running /authorsearch/" + req.params.searchString.toString());
     let userfiles = 'userfiles';
 
     let bookTitle = req.params.searchString;

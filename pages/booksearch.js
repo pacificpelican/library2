@@ -41,7 +41,7 @@ function booksearch(props) {
       <div id="BookSearch-main__html_Container">
         <header id="bookSearchHeader">
           <section id="bookSearchHeader__section">
-            <h1 id="bookSearchHeader__section__h1">book search</h1>
+            <h1 id="bookSearchHeader__section__h1">book search <span className="case">case sensitive</span></h1>
             <button id="backButton" href="#" onClick={goBack}>
               ⬅️ back
             </button>
@@ -58,7 +58,7 @@ function booksearch(props) {
 
         <main id="searchOutput">
           <section id="commandCenter">
-            <p>{searchedTitle}</p>
+            {/* <p>{searchedTitle}</p> */}
             <button id="runSearch" onClick={lookUpSearch}>look up</button>
           </section>
 
@@ -112,6 +112,16 @@ function booksearch(props) {
           div#BookSearch-main__html_Container span {
             font-family: var(--uiFonts, monospace);
             font-size: calc(0.88rem);
+          }
+
+          button#runSearch {
+            margin-top: 11pt;
+          }
+
+          span.case {
+            font-family: var(--contentFonts, monospace);
+            font-size: calc(0.7rem);
+            color: gray;
           }
   
           @media (max-width: 800px) {
