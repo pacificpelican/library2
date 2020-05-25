@@ -7,6 +7,10 @@ const urlPermalinkBase = 'http://localhost:3020/permalink?query=';
 function booklist(props) {
   let [item, setItem] = useState(props.books);
 
+  let lucidaFonts = "Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif";
+  let systemFonts = "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif";
+
+  let fontSet = Object.assign({}, {systemFonts: systemFonts, lucidaFonts: lucidaFonts});
 
   return(
     <div id="latestBooks">
@@ -31,12 +35,12 @@ function booklist(props) {
           padding-top: calc(10pt + 1vw);
         }
         div#latestBooks h3 {
-          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          font-family: ${fontSet.lucidaFonts};
           font-size: calc(1.314rem);
         }
         div#latestBooks ul#booksCollection li {
           margin-bottom: calc(1vh + 5pt);
-          font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+          font-family: ${fontSet.systemFonts};
           font-size: calc(1.127rem);
         }
         div#latestBooks span.divider {

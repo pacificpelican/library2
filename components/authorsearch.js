@@ -70,12 +70,12 @@ function authorsearch(props) {
       <style>
         {`
           :root {
-            --uiFonts: "Ubuntu Mono", "Inconsolata", "Anonymous Pro", "Hack",
+            --uiFonts: Ubuntu Mono, Inconsolata, Anonymous Pro, Hack,
               Menlo, monospace;
-            --contentFonts: "Ubuntu Sans", "Lato", "Open Sans", "Lucida Grande",
-              "Segoe UI", "Roboto", Helvetica, sans-serif;
-            --displayFonts: "Gentona", "Baufra", Helvetica, sans-serif;
-            --monoFonts: "Anonymous Pro", "Hack", "Fira Sans", "Inconsolata",
+            --contentFonts: Ubuntu Sans, Lato, Open Sans, Lucida Grande,
+              Segoe UI, Roboto, Helvetica, sans-serif;
+            --displayFonts: Gentona, Baufra, Helvetica, sans-serif;
+            --monoFonts: Anonymous Pro, Hack, Fira Sans, Inconsolata,
               monospace;
             --white-color: white;
           }
@@ -93,7 +93,7 @@ function authorsearch(props) {
           }
 
           div#BookSearch-main__html_Container h4 {
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-family: Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif;
             font-size: calc(0.9rem);
           }
 

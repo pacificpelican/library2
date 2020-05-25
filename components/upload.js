@@ -46,7 +46,7 @@ class Upload extends Component {
 					h3#upload_h3 {
 						margin-top: calc(1pt + 0.4vh);
 						margin-bottom: calc(1pt + 2.4vh);
-						font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+						font-family: Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif;
 						font-size: calc(1.4rem);
 					}
 					span.sideNote {

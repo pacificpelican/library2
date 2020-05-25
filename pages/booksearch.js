@@ -82,12 +82,12 @@ function booksearch(props) {
       <style>
         {`
           :root {
-            --uiFonts: "Ubuntu Mono", "Inconsolata", "Anonymous Pro", "Hack",
+            --uiFonts: Ubuntu Mono, Inconsolata, Anonymous Pro, Hack,
               Menlo, monospace;
-            --contentFonts: "Ubuntu Sans", "Lato", "Open Sans", "Lucida Grande",
-              "Segoe UI", "Roboto", Helvetica, sans-serif;
-            --displayFonts: "Gentona", "Baufra", Helvetica, sans-serif;
-            --monoFonts: "Anonymous Pro", "Hack", "Fira Sans", "Inconsolata",
+            --contentFonts: Ubuntu Sans, Lato, Open Sans, Lucida Grande,
+              Segoe UI, Roboto, Helvetica, sans-serif;
+            --displayFonts: Gentona, Baufra, Helvetica, sans-serif;
+            --monoFonts: Anonymous Pro, Hack, Fira Sans, Inconsolata,
               monospace;
             --white-color: white;
           }

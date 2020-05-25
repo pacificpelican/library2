@@ -143,12 +143,12 @@ function indexPage() {
       <style>
         {`
           :root {
-            --uiFonts: "Ubuntu Mono", "Inconsolata", "Anonymous Pro", "Hack",
+            --uiFonts: Ubuntu Mono, Inconsolata, Anonymous Pro, Hack,
               Menlo, monospace;
-            --contentFonts: "Ubuntu Sans", "Lato", "Open Sans", "Lucida Grande",
-              "Segoe UI", "Roboto", Helvetica, sans-serif;
-            --displayFonts: "Gentona", "Baufra", Helvetica, sans-serif;
-            --monoFonts: "Anonymous Pro", "Hack", "Fira Sans", "Inconsolata",
+            --contentFonts: Ubuntu Sans, Lato, Open Sans, Lucida Grande,
+              Segoe UI, Roboto, Helvetica, sans-serif;
+            --displayFonts: Gentona, Baufra, Helvetica, sans-serif;
+            --monoFonts: Anonymous Pro, Hack, Fira Sans, Inconsolata,
               monospace;
             --white-color: white;
           }
@@ -183,7 +183,7 @@ function indexPage() {
             margin-block-start: calc(2vh + 10px);
           }
           footer#info {
-            font-family: var(--contentFonts, 'Helvetica');
+            font-family: var(--contentFonts, Helvetica);
           }
           footer#info a {
             color: inherit;
