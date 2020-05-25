@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 const urlBase = 'http://localhost:3020/uploads/';
 const urlPermalinkBase = 'http://localhost:3020/permalink?query=';
 
@@ -14,7 +13,6 @@ function booklist(props) {
 
   return(
     <div id="latestBooks">
-      {/* <h3 className="booklist__h3">Books</h3> */}
       
       <ul id="booksCollection">
         {props.books.map(function(ibook) {

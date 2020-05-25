@@ -6,9 +6,6 @@ import Booklist from "./booklist";
 function authorsearch(props) {
   const [books, setBooks] = useState([]);
   const [searchedTitle, setSearchedTitle] = useState('');
-  const goBack = () => {
-    window.history.back();
-  }
 
   const lookUpSearch = () => {
     if (searchedTitle !== '') {
