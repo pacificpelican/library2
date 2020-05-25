@@ -11,6 +11,7 @@ class Upload extends Component {
 		this.input4 = React.createRef();
 		this.sparknotes = React.createRef();
 		this.inputX = React.createRef();
+		this.inputSt = React.createRef();
 	}
 
 	render() {
@@ -25,6 +26,7 @@ class Upload extends Component {
 						<section className="expense-form"><span className="input-span">book year: </span><input id="input-year" type="text" ref={this.input4} name="bookYear" /></section>
 						<section className="expense-form"><span className="input-span">book url: </span><input id="input-url" type="text" ref={this.input2} name="bookUrl" /></section>
 						<section className="expense-form"><span className="input-span">book author: </span><input id="input-author" type="text" ref={this.input3} name="bookAuthor" /></section>
+						<section className="expense-form"><span className="input-span">book stars: </span><input id="input-stars" type="text" ref={this.inputSt} name="bookStars" /> <span className="sideNote" id="stars1to5">1 to 5</span></section>
 						<section className="expense-form"><span className="input-span">book tags: </span><input id="input-tags" type="array" ref={this.inputX} name="bookTags" /> <span className="sideNote" id="commaSeparated">comma separated</span></section>
 						<aside id="bookNotesAside"><span>notes:</span> <textarea ref={this.sparknotes} name="bookNotes" /></aside>
 						<input id="submitter" type="submit" value="Upload!" />
@@ -84,6 +86,12 @@ class Upload extends Component {
 							height: calc(25pt + 1vh);
 							font-size: calc(1.2rem);
 							background: #f0f1f5;
+						}
+						input#input-stars {
+							width: calc(15pt + 7vw) !important;
+						}
+						span.input-span {
+							width: calc(3pt + 7vw);
 						}
 						textarea {
 							width: calc(10pt + 33vw);

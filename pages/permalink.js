@@ -6,6 +6,17 @@ const ReactMarkdown = require('react-markdown');
  
 let urlBase = 'http://localhost:3020/uploads/';
 
+function starMachine(stars) {
+  let retStars = '';
+  if ((stars > 0) && (stars < 6)) {
+    for (let i = 0; i<stars; i++) {
+      retStars = retStars + '★';
+    }
+  }
+  //  return `${stars}`;
+  return retStars;
+}
+
 function permalink(props) {
   let [item, setItem] = useState([]);
 
@@ -50,7 +61,7 @@ function permalink(props) {
         <span className="divider">{" "}|{" "}</span><span id="author">{item.bookAuthor ? item.bookAuthor : '(author missing)'}</span> 
         <span className="divider">{" "}|{" "}</span> <span id="year">{item.bookYear ? item.bookYear : '(year missing)'}</span> 
         <span className="divider">{" "}|{" "}</span> <span className="bookLink">{item.bookUrl ? <a className="linkLink" href={item.bookUrl}>🔗</a> : '(no url found)'}</span> 
-        <span className="divider">{" "}|{" "}</span> <span className="link"><a href={urlBase + item.vFile}>download</a></span></li>
+        <span className="divider">{" "}|{" "}</span> <span className="link"><a href={urlBase + item.vFile}>download</a><span className="divider">{" "}|{" "}</span></span>  <span id="stars" className="userStars">{item.bookStars ? starMachine(Number(item.bookStars)) : '🏛️'}</span></li>{"  "}
       </ul>
 
       <p id="bookNotes">
