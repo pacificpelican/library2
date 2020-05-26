@@ -5,7 +5,8 @@ const urlPermalinkBase = 'http://localhost:3020/permalink?query=';
 
 function latest() {
   let [item, setItem] = useState([]);
-  useEffect(() => {   
+  
+  useEffect(() => {
     let dest = '/listbooks';
 
     fetch(dest, { method: "get" })
@@ -24,21 +25,21 @@ function latest() {
       });
 
   }, [])
-let lucidaFonts = "Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif";
 
-let systemFonts = "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif";
+  let lucidaFonts = "Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif";
+  let systemFonts = "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif";
 
-let fontSet = Object.assign({}, {systemFonts: systemFonts, lucidaFonts: lucidaFonts});
+  let fontSet = Object.assign({}, { systemFonts: systemFonts, lucidaFonts: lucidaFonts });
 
-  return(
+  return (
     <div id="latestBooks">
       <h3>Latest</h3>
-      
+
       <ul id="booksCollection">
-        {item.map(function(ibook) {
+        {item.map(function (ibook) {
           console.log(ibook);
-          return(
-          <li key={ibook.bookTitle}><span className="bookTitle">{ibook.bookTitle}</span> <span className="divider">|</span> <span className="author">{ibook.bookAuthor ? ibook.bookAuthor : '(author missing)'}</span> <span className="divider">|</span> <span className="year">{ibook.bookYear ? ibook.bookYear : '(year missing)'}</span> <span className="link"><a href={urlPermalinkBase + ibook.locator}>link</a></span> · <span className="download"><a href={urlBase + ibook.vFile}>download</a></span></li>
+          return (
+            <li key={ibook.bookTitle}><span className="bookTitle">{ibook.bookTitle}</span> <span className="divider">|</span> <span className="author">{ibook.bookAuthor ? ibook.bookAuthor : '(author missing)'}</span> <span className="divider">|</span> <span className="year">{ibook.bookYear ? ibook.bookYear : '(year missing)'}</span> <span className="link"><a href={urlPermalinkBase + ibook.locator}>link</a></span> · <span className="download"><a href={urlBase + ibook.vFile}>download</a></span></li>
           )
         })}
       </ul>

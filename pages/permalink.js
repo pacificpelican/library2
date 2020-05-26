@@ -13,7 +13,6 @@ function starMachine(stars) {
       retStars = retStars + '★';
     }
   }
-  //  return `${stars}`;
   return retStars;
 }
 
@@ -74,8 +73,7 @@ function permalink(props) {
 
       <Helmet>
         <title>
-        {`${item.bookTitle} | The Library of Progress`}
-        
+          {`${item.bookTitle} | The Library of Progress`}
         </title>
       </Helmet>
 

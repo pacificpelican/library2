@@ -12,8 +12,6 @@ import Card from '@material-ui/core/Card';
 import Headernav from "../components/Headernav";
 import Footernav from "../components/Footernav";
 
-import eqSet from "../components/eqset";
-
 import reloadOnce from "../components/reloadOnce";
 
 class Desk extends Component {

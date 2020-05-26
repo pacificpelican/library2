@@ -15,7 +15,6 @@ function booksearch(props) {
       let g = document.getElementById('backButton');
       g.style.display = "none";
     }
-
   }, [])
 
   const lookUpSearch = () => {
@@ -39,6 +38,7 @@ function booksearch(props) {
   return (
     <div id="BookSearch-main">
       <div id="BookSearch-main__html_Container">
+
         <header id="bookSearchHeader">
           <section id="bookSearchHeader__section">
             <h1 id="bookSearchHeader__section__h1">book search <span className="case">case sensitive</span></h1>
@@ -47,13 +47,10 @@ function booksearch(props) {
             </button>
             <h4>Look for a book</h4>
           </section>
-
           <section className="book-search-form"><span className="input-span">book title: </span>
-
             <input type="text" value={searchedTitle} onChange={e => setSearchedTitle(e.target.value)} />
-
-            <span className="sideNote"></span></section>
-
+            <span className="sideNote"></span>
+          </section>
         </header>
 
         <main id="searchOutput">
@@ -61,24 +58,19 @@ function booksearch(props) {
             {/* <p>{searchedTitle}</p> */}
             <button id="runSearch" onClick={lookUpSearch}>look up</button>
           </section>
-
           <br className="spacer" />
-
           <section id="searchOutput_sortedData">
             <Booklist books={books} />
           </section>
-
-          {/* <section id="searchOutput__ServerData">
-            <Okviewer spreadsheetdata={books} />
-          </section> */}
         </main>
 
-
       </div>
+
       <Helmet>
         <title>The Library of Progress | book search</title>
         <link rel="icon" href="favicon.ico" />
       </Helmet>
+      
       <style>
         {`
           :root {

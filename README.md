@@ -18,7 +18,8 @@
 - meta-data about the post is saved to /db/lop.json using [LokiJS](http://techfort.github.io/LokiJS/)
 - View recent uploads (`latest` component shows the last 20) and download files or save perma-links
 - the `parmalink` page can show a book based on a `query` parameter of the book's locator (a kind of ID for a Library of Progress book)
-- clicking on 🔍 in the upper right corner opens a read-update-destroy tool powered by [Seis](https://seis.pacificio.com) (default collection is `userfiles`)
+- clicking on `Data Desk` in the top navigation menu opens a read-update-destroy tool powered by [Seis](https://seis.pacificio.com) (default collection is `userfiles`)
+- clicking on 🔍 in the upper right corner opens the `booksearch` page
 - when a user uplaods data, by default Git is set up to ignore those files (in the `/public/uploads` directory) so while the `db/lop.json` file keeps track of the uploads (allowing features like the `permalink` to connect the list on the web page to the undelying uploaded book file) and it is tracked by Git by default, the uploaded files are not part of the Git working directory (unless the `public/uploads` line were to be deleted from the `.gitignore` file).
 
 ## How to set up
