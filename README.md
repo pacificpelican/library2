@@ -34,6 +34,12 @@ yarn install
 yarn run dev
 ```
 
+### QuickStart
+
+- Delete the `lop.json` file (this file is the database file and contains entries for books added during development that are not in the repo when the site is cloned via Git): you can do this with `rm ./db/lop.json`
+- Visit the site's upload section at http://localhost:3020#upload: `open http://localhost:3020#upload`
+- Upload your pdf or epub file
+
 ### Visit the site at its port 3020
 
 ```bash

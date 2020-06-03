@@ -1,5 +1,5 @@
 import React from "react";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 import VreelUpload from "../components/upload";
 import Latest from "../components/latest";
@@ -47,7 +47,7 @@ function indexPage() {
             </article>
             <article id="main-view--section-img___article-caption">
               <h4 id="main-view--section-img___article-caption____h4">
-                Powered by <a href="https://reactjs.org">react</a>, <a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a>, and <a href="https://webpack.js.org/">Webpack</a>
+                Powered by <a href="https://reactjs.org">React</a>, <a href="https://nextjs.org/">NextJS</a>, <a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a>, <a href="https://nodejs.org">NodeJS</a>, <a href="http://techfort.github.io/LokiJS/">LokiJS</a>, <a href="https://web-component-boilerplate.pacificio.com/">web-component-boilerplate</a>, <a href="https://webpack.js.org/">Webpack</a>, and <a href="https://babeljs.io/">Babel</a>
               </h4>
               <h2 id="main-view--section-img___article-caption____h2">
                 The Library of Progress is a collection for 21st Century Knowledge and Understanding
@@ -140,7 +140,7 @@ function indexPage() {
         <title>The Library of Progress</title>
         <link rel="icon" href="favicon.ico" />
       </Helmet>
-      
+
       <style>
         {`
           :root {
@@ -179,6 +179,12 @@ function indexPage() {
             padding-inline-end: calc(1vw + 5px);
             padding-block-start: calc(0.4vw + 5px);
             padding-block-end: calc(0.4vw + 5px);
+          }
+          #main-view--section-img___article-caption____h4 a {
+            color: #434952;
+          }
+          #main-view--section-img___article-caption____h4 a:visited {
+            color: #9babc2;
           }
           footer#readMore {
             margin-block-start: calc(2vh + 10px);
