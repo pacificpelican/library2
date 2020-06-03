@@ -284,6 +284,8 @@ app.prepare().then(() => {
 
     actor1.vFile = fileNameRefined;
 
+    actor1.md5 = req.files.sampleFile.md5;
+
     console.log(actor1);
     console.log(actor1.bookTitle);
 
