@@ -20,6 +20,8 @@
 - the `parmalink` page can show a book based on a `query` parameter of the book's locator (a kind of ID for a Library of Progress book)
 - clicking on `Data Desk` in the top navigation menu opens a read-update-destroy tool powered by [Seis](https://seis.pacificio.com) (default collection is `userfiles`)
 - clicking on 🔍 in the upper right corner opens the `booksearch` page
+  - the search components `authorsearch` and `booksearch` use API routes specific to the property being searched e.g. `'/booksearch/:searchString`
+  - one of the search routes is `/md5search/:searchString` where searchString is the md5 string created by the upload library `express-fileupload` so for example this search should return all entries with the file being `Dubliners` from Gutenberg (the specific one I downloaded in 2020): `http://localhost:3020/md5search/190849e0e2f0615686bd80a6d8570469`
 - when a user uplaods data, by default Git is set up to ignore those files (in the `/public/uploads` directory) so while the `db/lop.json` file keeps track of the uploads (allowing features like the `permalink` to connect the list on the web page to the undelying uploaded book file) and it is tracked by Git by default, the uploaded files are not part of the Git working directory (unless the `public/uploads` line were to be deleted from the `.gitignore` file).
 
 ## How to set up
@@ -36,7 +38,7 @@ yarn run dev
 
 ### QuickStart
 
-- Delete the `lop.json` file (this file is the database file and contains entries for books added during development that are not in the repo when the site is cloned via Git): you can do this with `rm ./db/lop.json`
+- Before the first time you run the app delete the `lop.json` file (this file is the test database file and contains entries for books added during development that are not in the `/public/uploads` directory of the repo as expected in the database when the site is cloned via Git): you can do this with `rm ./db/lop.json`
 - Visit the site's upload section at http://localhost:3020#upload: `open http://localhost:3020#upload`
 - Upload your pdf or epub file
 
