@@ -382,7 +382,7 @@ app.prepare().then(() => {
         _collection = db.addCollection(userfiles);
       }
       console.log("book title: " + bookTitle);
-      let results = _collection.chain().find({ bookTitle: {'$contains': bookTitle } } ).simplesort("created_at_time", true).limit(20).data();
+      let results = _collection.chain().find({ bookTitle: {'$contains': bookTitle } } ).simplesort("created_at_time", true).limit(100).data();
       console.log(results);
       if ((results !== 'undefined') && (results !== null)) {
         let limtedReturn = results.slice(Math.max(results.length - 25, 0))
@@ -408,7 +408,33 @@ app.prepare().then(() => {
         _collection = db.addCollection(userfiles);
       }
       console.log("book title: " + bookTitle);
-      let results = _collection.chain().find({ bookAuthor : {'$contains': bookTitle } } ).simplesort("created_at_time", true).limit(20).data();
+      let results = _collection.chain().find({ bookAuthor : {'$contains': bookTitle } } ).simplesort("created_at_time", true).limit(100).data();
+      console.log(results);
+      if ((results !== 'undefined') && (results !== null)) {
+        let limtedReturn = results.slice(Math.max(results.length - 25, 0))
+        res.send(limtedReturn);
+      }
+      else {
+        res.send({ content: 'none' });
+      }
+    });
+  });
+
+  server.get('/md5search/:searchString', function (req, res) {
+    console.log("running /md5search/" + req.params.searchString.toString());
+    let userfiles = 'userfiles';
+
+    let bookTitle = req.params.searchString;
+
+    db.loadDatabase({}, function () {
+      let _collection = db.getCollection(userfiles);
+
+      if (!_collection) {
+        console.log("Collection %s does not exist. Creating ...", userfiles);
+        _collection = db.addCollection(userfiles);
+      }
+      console.log("md5 string: " + bookTitle);
+      let results = _collection.chain().find({ md5 : {'$contains': bookTitle } } ).simplesort("created_at_time", true).limit(100).data();
       console.log(results);
       if ((results !== 'undefined') && (results !== null)) {
         let limtedReturn = results.slice(Math.max(results.length - 25, 0))
