@@ -281,6 +281,7 @@ app.prepare().then(() => {
     fileNameRefined = fileNameRefined.split(')').join('-');
     fileNameRefined = fileNameRefined.split('[').join('');
     fileNameRefined = fileNameRefined.split(']').join('');
+    fileNameRefined = fileNameRefined.split('\'').join('');
 
     actor1.vFile = fileNameRefined;
 
