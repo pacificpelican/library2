@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 const ReactMarkdown = require('react-markdown');
- 
+
 let urlBase = 'http://localhost:3020/uploads/';
 
 function starMachine(stars) {
   let retStars = '';
   if ((stars > 0) && (stars < 6)) {
-    for (let i = 0; i<stars; i++) {
+    for (let i = 0; i < stars; i++) {
       retStars = retStars + '★';
     }
   }
@@ -56,11 +56,11 @@ function permalink(props) {
       <h3>Book Record {item.locator}</h3>
 
       <ul id="booksCollection">
-        <li key={item.bookTitle}><span className="bookTitle">{item.bookTitle ? item.bookTitle : '(no book found)'}</span> 
-        <span className="divider">{" "}|{" "}</span><span id="author">{item.bookAuthor ? item.bookAuthor : '(author missing)'}</span> 
-        <span className="divider">{" "}|{" "}</span> <span id="year">{item.bookYear ? item.bookYear : '(year missing)'}</span> 
-        <span className="divider">{" "}|{" "}</span> <span className="bookLink">{item.bookUrl ? <a className="linkLink" href={item.bookUrl}>🔗</a> : '(no url found)'}</span> 
-        <span className="divider">{" "}|{" "}</span> <span className="link"><a href={urlBase + item.vFile}>download</a><span className="divider">{" "}|{" "}</span></span>  <span id="stars" className="userStars">{item.bookStars ? starMachine(Number(item.bookStars)) : '🏛️'}</span></li>{"  "}
+        <li key={item.bookTitle}><span className="bookTitle">{item.bookTitle ? item.bookTitle : '(no book found)'}</span>
+          <span className="divider">{" "}|{" "}</span><span id="author">{item.bookAuthor ? item.bookAuthor : '(author missing)'}</span>
+          <span className="divider">{" "}|{" "}</span> <span id="year">{item.bookYear ? item.bookYear : '(year missing)'}</span>
+          <span className="divider">{" "}|{" "}</span> <span className="bookLink">{item.bookUrl ? <a className="linkLink" href={item.bookUrl}>🔗</a> : '(no url found)'}</span>
+          <span className="divider">{" "}|{" "}</span> <span className="link"><a href={urlBase + item.vFile}>download</a><span className="divider">{" "}|{" "}</span></span>  <span id="stars" className="userStars">{item.bookStars ? starMachine(Number(item.bookStars)) : '🏛️'}</span></li>{"  "}
       </ul>
 
       <p id="bookNotes">

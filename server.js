@@ -251,8 +251,11 @@ app.prepare().then(() => {
 
     let sampleFileName = req.files.sampleFile.name;
     let fileEnding = sampleFileName.substr(sampleFileName.length - 3);
-    if (fileEnding === 'pub') {  //  probably epub instead of pdf
+    if ((fileEnding === 'pub') || (fileEnding === 'obi')) {  //  probably epub or mobi instead of pdf
       fileEnding = sampleFileName.substr(sampleFileName.length - 4);
+    }
+    if (fileEnding === 'ub3') {  //  probably epub3
+      fileEnding = sampleFileName.substr(sampleFileName.length - 5);
     }
 
     var actor1 = req.body;

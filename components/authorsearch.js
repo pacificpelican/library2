@@ -25,20 +25,19 @@ function authorsearch(props) {
         });
     }
   }
+
   return (
     <div id="BookSearch-main">
       <div id="BookSearch-main__html_Container">
+        
         <header id="bookSearchHeader">
           <section id="bookSearchHeader__section">
             <h1 id="bookSearchHeader__section__h1">author search <span className="case">case sensitive</span></h1>
           </section>
-
           <section className="book-search-form"><span className="input-span">search by name: </span>
-
             <input type="text" value={searchedTitle} onChange={e => setSearchedTitle(e.target.value)} />
-
-            <span className="sideNote"></span></section>
-
+            <span className="sideNote"></span>
+          </section>
         </header>
 
         <main id="searchOutput">
@@ -46,24 +45,18 @@ function authorsearch(props) {
             {/* <p>{searchedTitle}</p> */}
             <button id="runSearch" onClick={lookUpSearch}>look up</button>
           </section>
-
           <br className="spacer" />
-
           <section id="searchOutput_sortedData">
             <Booklist books={books} />
           </section>
-
-          {/* <section id="searchOutput__ServerData">
-            <Okviewer spreadsheetdata={books} />
-          </section> */}
         </main>
-
-
       </div>
+
       <Helmet>
         <title>The Library of Progress | author search</title>
         <link rel="icon" href="favicon.ico" />
       </Helmet>
+
       <style>
         {`
           :root {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const urlBase = 'http://localhost:3020/uploads/';
 const urlPermalinkBase = 'http://localhost:3020/permalink?query=';
