@@ -22,7 +22,7 @@ function indexPage() {
               <li>
                 <a href="#carousel">Exhibitions</a></li>
               <li>
-                <a href="https://gallery.sf3am.com">Gallery</a></li>
+                <a href="/dewey">List</a></li>
               <li>
                 <a href="/Desk">Data Desk </a>
               </li>

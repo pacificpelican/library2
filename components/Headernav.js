@@ -12,6 +12,9 @@ export default () => (
           <a href="../../About">About</a>
         </li>
         <li>
+          <a href="../../dewey">All Books</a>
+        </li>
+        <li>
           <a href="https://github.com/pacificpelican/seis">
             Code
           </a>
