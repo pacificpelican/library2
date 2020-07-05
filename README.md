@@ -28,7 +28,7 @@
 
 ## How to set up
 
-### Install it and run (required [NodeJS](https://nodejs.org/en/)):
+### Install it and run (requires [NodeJS](https://nodejs.org/en/)):
 
 ```bash
 npm install

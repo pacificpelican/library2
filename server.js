@@ -327,6 +327,43 @@ app.prepare().then(() => {
     });
   });
 
+  server.post('/uploadbirthday', function (req, res) {
+    console.log(req.body);
+
+    var actor1 = req.body;
+
+    let LC1 = Date.now().toString() + Math.floor(Math.random() * locatorScale + 1) + valueHEX;
+
+    let LC2 = ObjectID() +  "-" + LC1.toString();
+
+    let tags = commaParseTags(actor1.birthdayTags);
+
+    console.log("tags: ");
+    console.log(tags);
+
+    delete actor1.bookTags;
+
+    let serverObject = Object.assign(actor1, { locator: LC2, created_at_time: Date.now(), tags: [tags] })
+
+      let userfiles = 'birthdays';
+
+      db.loadDatabase({}, function () {
+        let _collection = db.getCollection(userfiles);
+
+        if (!_collection) {
+          console.log("Collection %s does not exist. Creating ...", userfiles);
+          _collection = db.addCollection(userfiles);
+        }
+
+        _collection.insert(serverObject);
+
+        db.saveDatabase();
+      });
+
+      res.send('<section>ADDED! ∫∂' + '<a href="http://localhost:' + lopPort + '">Home</a></section><aside><img src="../img/save.gif" id="save" /></aside><style>img#save {width: calc(65vw)}</style>');
+
+  });
+
   server.get('/listlatest', function (req, res) {
     console.log("running /listlatest");
     let userfiles = 'userfiles';
