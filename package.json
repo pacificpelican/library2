@@ -1,6 +1,6 @@
 {
   "name": "library2",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "author": {
     "email": "d@danmckeown.info",
     "name": "Dan McKeown",
@@ -19,7 +19,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
     "body-parser": "^1.19.0",
-    "express-fileupload": "^1.1.7-alpha.3",
+    "express-fileupload": "^1.2.0",
     "lokijs": "^1.5.8",
     "okconceptviewer": "^1.0.1",
     "@material-ui/core": "^3.9.2",
