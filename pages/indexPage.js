@@ -7,12 +7,27 @@ import Booksearch from "./booksearch";
 import Authorsearch from "../components/authorsearch";
 
 function indexPage() {
+  function deletaAllData() {
+    let dest = '/api/1/deletealldata/db/lop/object/userfiles';
+    fetch(dest, { method: "post" })
+      .then(function (response) {
+        if (response.ok) {
+          console.log("response ok");
+          return response.json();
+        } else {
+          throw new Error(response.Error);
+        }
+      })
+      .then(function (myReturn) {
+        console.log(myReturn);
+      });
+  }
   return (
     <div id="main">
       <div id="fContainer">
         <header id="topTier">
           <section id="topTier--title-section">
-            <h1 id="frye">The Library of Progress</h1>
+            <h1 id="frye">Library2</h1>
           </section>
           <section id="topTier--nav-section">
             <ul id="topTier--nav-section___nav">
@@ -50,7 +65,7 @@ function indexPage() {
                 Powered by <a href="https://reactjs.org">React</a>, <a href="https://nextjs.org/">NextJS</a>, <a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a>, <a href="https://nodejs.org">NodeJS</a>, <a href="http://techfort.github.io/LokiJS/">LokiJS</a>, <a href="https://web-component-boilerplate.pacificio.com/">web-component-boilerplate</a>, <a href="https://webpack.js.org/">Webpack</a>, and <a href="https://babeljs.io/">Babel</a>
               </h4>
               <h2 id="main-view--section-img___article-caption____h2">
-                The Library of Progress is a collection for 21st Century Knowledge and Understanding
+                The Library2 Project is a tool for 21st Century Knowledge Collection
                 </h2>
             </article>
           </section>
@@ -129,10 +144,15 @@ function indexPage() {
           </section>
         </main>
 
+        <aside id="settings">
+          <h3>Settings</h3>
+          <a href="./Desk"><button className="bigB" id="viewALL">Query Data</button></a> <button className="bigB" id="deleteALL" onClick={deletaAllData}>Delete All Data</button>
+        </aside>
+
         <footer id="info">
           <aside id="copyright">
             <span id="designed"
-            >(c) 2020 Created by <a href="https://danieljmckeown.com">Daniel J. McKeown</a> in Washington state</span>
+            >(c) 2020-2021 Created by <a href="https://danieljmckeown.com">Daniel J. McKeown</a> in Washington state</span>
           </aside>
           <br />
           <br />
@@ -151,7 +171,7 @@ function indexPage() {
         </footer>
       </div>
       <Helmet>
-        <title>The Library of Progress</title>
+        <title>Library 2</title>
         <link rel="icon" href="favicon.ico" />
       </Helmet>
 
@@ -176,6 +196,13 @@ function indexPage() {
             padding-left: 0px;
             padding-right: 0px;
             background: white;
+          }
+          button#deleteALL, button.bigB {
+            width: calc(70pt + 6vw);
+            height: calc(30pt + 8vh);
+          }
+          button#deleteALL {
+            background-color: #fc9003;
           }
           section#main-view--section-img,
           section#newsAndEvents,
@@ -206,7 +233,7 @@ function indexPage() {
           footer#readMore {
             margin-block-start: calc(2vh + 10px);
           }
-          footer#info {
+          footer#info, aside#settings {
             font-family: var(--contentFonts, Helvetica);
             padding-left: calc(2vw + 10pt);
           }
@@ -308,6 +335,7 @@ function indexPage() {
             }
             h1#frye {
               margin-block-start: calc(1vh + 5px);
+              font-style: italic;
             }
             section#topTier--search-section {
               margin-block-start: calc(1vh + 5px);

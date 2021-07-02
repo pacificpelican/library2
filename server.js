@@ -223,6 +223,43 @@ function deleteDataWildcard(
   });
 }
 
+function deleteDataWholeDeck(
+  db,
+  table,
+  tuple,
+  objval,
+  objkey = "description",
+  newVal = "__"
+) { //  the last 3 parameters can be null
+  console.log(db, table);
+  console.log("collection to delete: " + table);
+  let dbDirectory = __dirname + "/db/" + db + ".json";
+  console.log("loki dir: " + dbDirectory);
+  let db2 = new loki(dbDirectory);
+
+  db2.loadDatabase({}, () => {
+    let _collection = db2.getCollection(table);
+
+    if (!_collection) {
+      console.log(
+        "Collection %s does not exist. Aborting attempt to edit ",
+        table
+      );
+      throw new Error("ERROR: collection does not exist");
+    } else {
+      console.log(table + " collection exists");
+    }
+    //  console.log(_collection);
+    db2.removeCollection(table)
+    //console.log("tuple: " + tuple);
+
+    //_collection.findAndRemove({ locator: { $aeq: tuple } });
+    db2.saveDatabase();
+
+    console.log("record " + table + " removed (💣💣💣🤷)");
+  });
+}
+
 app.prepare().then(() => {
   const server = express()
 
@@ -588,6 +625,25 @@ app.prepare().then(() => {
       );  //  the last 3 parameters can be null
 
       res.send(Object.assign({}, { Response: "ok - POST update (remove)" }));
+    }
+  );
+
+  server.post(
+    "/api/1/deletealldata/db/:db/object/:obj",
+    (req, res) => {
+      console.log("running (simple) deletealldata POST route");
+      console.log("obj: " + req.params.obj);
+
+      deleteDataWholeDeck(
+        req.params.db,
+        req.params.obj,
+        null,
+        null,
+        null,
+        null
+      );  //  the last 3 parameters can be null
+
+      res.send(Object.assign({}, { Response: "ok - POST update (remove collection)" + req.params.obj }));
     }
   );
 
