@@ -1,8 +1,8 @@
-# The Library of Progress
+# *Library2*
 
-*a tool for knowledge diffusion*
+*a tool for knowledge collection*
 
-*copyright 2020 by [Daniel J McKeown](https://danieljmckeown.com) all rights reserved*
+*copyright 2020-2021 by [Daniel J McKeown](https://danieljmckeown.com) all rights reserved*
 
 ## What it does
 
@@ -46,7 +46,7 @@ open http://localhost:3020
 
 ### QuickStart
 
-- **Before the first time you run the app you probably want to delete the `lop.json` file** (this file is the test database file and contains entries for books added during development that are not in the `/public/uploads` directory of the repo as expected in the database when the site is cloned via Git and thus the *download* links won't work): you can do this with `rm ./db/lop.json`
+- **Before the first time you run the app you probably want to delete the `lop.json` file** (this file is the test database file and contains entries for books added during development that are not in the `/public/uploads` directory of the repo as expected in the database when the site is cloned via Git and thus the *download* links won't work): you can do this in the terminal with `rm ./db/lop.json` or you can use the red-orange `delete all data` button on the index page
 - Visit the site's upload section at http://localhost:3020#upload: `open http://localhost:3020#upload`
 - Upload your pdf or epub file
 

@@ -56,7 +56,7 @@ function indexPage() {
             <article id="main-view--section-img___article">
               <img
                 id="main-view--section-img___article-img"
-                src={"./img/books.jpg"}
+                src={"./img/flower-b-3.webp"}
                 alt="mainImg"
               />
             </article>
