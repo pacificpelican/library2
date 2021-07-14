@@ -16,6 +16,8 @@ const convertObj = require("object-array-converter");
 
 var ObjectID = require("bson-objectid");
 
+const { nanoid } = require('nanoid');
+
 var loki = require('lokijs');
 var crypto = require('crypto');
 
@@ -299,7 +301,7 @@ app.prepare().then(() => {
 
     let LC1 = Date.now().toString() + Math.floor(Math.random() * locatorScale + 1) + valueHEX;
 
-    let LC2 = ObjectID() +  "-" + LC1.toString();
+    let LC2 = nanoid() +  "-" + LC1.toString();
 
     let fileName = actor1.bookTitle + "-" + actor1.bookYear + "-" + actor1.bookAuthor + "-" + LC2 + "." + fileEnding;
 
