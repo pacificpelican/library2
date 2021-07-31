@@ -91,7 +91,7 @@ function indexPage() {
           <section id="newsAndEvents">
             <article id="box1">
               <header id="newsAndEvents--box1__header"></header>
-              <h3><i><a href="http://localhost:3020/permalink?query=5ebadb3e5744457d66de32f1-15893041260085604056f14b6a2">Ulysses</a></i> </h3>
+              <h3><i><a href="http://localhost:3020/permalink?query=aZ3VhnZCCJURZXCIXNjEP">Ulysses</a></i> </h3>
               <aside>
                 by James Joyce
               </aside>
