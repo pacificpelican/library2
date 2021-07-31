@@ -14,8 +14,6 @@ const bodyParser = require('body-parser');
 
 const convertObj = require("object-array-converter");
 
-var ObjectID = require("bson-objectid");
-
 const { nanoid } = require('nanoid');
 
 var loki = require('lokijs');
@@ -299,8 +297,6 @@ app.prepare().then(() => {
 
     var actor1 = req.body;
 
-    let LC1 = Date.now().toString() + Math.floor(Math.random() * locatorScale + 1) + valueHEX;
-
     let LC2 = nanoid();
 
     let fileName = actor1.bookTitle + "-" + actor1.bookYear + "-" + actor1.bookAuthor + "-" + LC2 + "." + fileEnding;
@@ -373,7 +369,7 @@ app.prepare().then(() => {
 
     let LC1 = Date.now().toString() + Math.floor(Math.random() * locatorScale + 1) + valueHEX;
 
-    let LC2 = ObjectID() +  "-" + LC1.toString();
+    let LC2 = nanoid() +  "-" + LC1.toString();
 
     let tags = commaParseTags(actor1.birthdayTags);
 

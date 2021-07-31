@@ -53,7 +53,7 @@ function authorsearch(props) {
       </div>
 
       <Helmet>
-        <title>The Library of Progress | author search</title>
+        <title>Library2 | author search</title>
         <link rel="icon" href="favicon.ico" />
       </Helmet>
 

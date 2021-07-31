@@ -17,7 +17,7 @@
     * notes *texarea*
 - meta-data about the post is saved to /db/lop.json using [LokiJS](http://techfort.github.io/LokiJS/)
 - view recent uploads (`latest` component shows the last 20) and download files or save perma-links
-- the `parmalink` page can show a book based on a `query` parameter of the book's locator (a kind of ID for a Library of Progress book)
+- the `parmalink` page can show a book based on a `query` parameter of the book's locator (a kind of ID for a Library2 book)
 - clicking on `Data Desk` in the top navigation menu opens a read-update-destroy tool called `Desk` extracted from [Seis](https://github.com/pacificpelican/seis) (default database is `lop` and default collection is `userfiles`)
 - clicking on 🔍 in the upper right corner opens the `booksearch` page
   - the search components `authorsearch` and `booksearch` use API routes specific to the property being searched e.g. `'/booksearch/:searchString`

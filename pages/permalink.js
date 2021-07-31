@@ -68,12 +68,12 @@ function permalink(props) {
       </p>
 
       <footer id="permalink-footer">
-        <span id="lopItemFooterSpan"><a href="../../..">The Library of Progress</a></span>
+        <span id="lopItemFooterSpan"><a href="../../..">Library2</a></span>
       </footer>
 
       <Helmet>
         <title>
-          {`${item.bookTitle} | The Library of Progress`}
+          {`${item.bookTitle} | Library2`}
         </title>
       </Helmet>
 

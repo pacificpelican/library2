@@ -1,6 +1,6 @@
 {
   "name": "library2",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "author": {
     "email": "d@danmckeown.info",
     "name": "Dan McKeown",
@@ -27,7 +27,6 @@
     "grommet": "^2.6.5",
     "styled-components": "^4.2.0",
     "@smooth-ui/core-sc": "^10.0.4",
-    "bson-objectid": "^1.3.0",
     "react-markdown": "^4.3.1",
     "nanoid": "^3.1.23"
   }

@@ -44,7 +44,7 @@ function booksearch(props) {
             <button id="backButton" href="#" onClick={goBack}>
               ⬅️ back
             </button>
-            <h1 id="lop">The Library of Progress</h1>
+            <h1 id="lop">Library2</h1>
             <h4>List of All Book Titles</h4>
             <h6>as of {Date(Date.now()).toLocaleString()}</h6>
           </section>
@@ -65,7 +65,7 @@ function booksearch(props) {
       </div>
 
       <Helmet>
-        <title>The Library of Progress | book list</title>
+        <title>Library2 | book list</title>
         <link rel="icon" href="favicon.ico" />
       </Helmet>
 

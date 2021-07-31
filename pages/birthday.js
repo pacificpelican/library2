@@ -69,12 +69,12 @@ function permalink(props) {
       </p>
 
       <footer id="permalink-footer">
-        Birthday Calendar from <span id="lopItemFooterSpan"><a href="../../..">The Library of Progress</a></span>
+        Birthday Calendar from <span id="lopItemFooterSpan"><a href="../../..">Library2</a></span>
       </footer>
 
       <Helmet>
         <title>
-          {`${item.birthdayName} | The Library of Progress Birthday Calendar`}
+          {`${item.birthdayName} | The Library2 Birthday Calendar`}
         </title>
       </Helmet>
 
