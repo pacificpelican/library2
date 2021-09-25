@@ -1,23 +1,33 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-import VreelUpload from "../components/upload";
-import Latest from "../components/latest";
-import Booksearch from "./booksearch";
-import Authorsearch from "../components/authorsearch";
-
 function indexPage() {
+  function deletaAllData() {
+    let dest = '/api/1/deletealldata/db/lop/object/userfiles';
+    fetch(dest, { method: "post" })
+      .then(function (response) {
+        if (response.ok) {
+          console.log("response ok");
+          return response.json();
+        } else {
+          throw new Error(response.Error);
+        }
+      })
+      .then(function (myReturn) {
+        console.log(myReturn);
+      });
+  }
   return (
     <div id="main">
       <div id="fContainer">
         <header id="topTier">
           <section id="topTier--title-section">
-            <h1 id="frye">Library2</h1>
+            <h1 id="frye"><a href="../..">Library2</a></h1>
           </section>
           <section id="topTier--nav-section">
             <ul id="topTier--nav-section___nav">
               <li>
-                <a href="#latest">Visit</a>
+                <a href="../..">Visit</a>
               </li>
               <li>
                 <a href="#carousel">Exhibitions</a></li>
@@ -36,102 +46,12 @@ function indexPage() {
           </section>
         </header>
 
-        <main id="main-view">
-          <section id="main-view--section-img">
-            <article id="main-view--section-img___article">
-              <img
-                id="main-view--section-img___article-img"
-                src={"./img/flower-b-3.webp"}
-                alt="mainImg"
-              />
-            </article>
-            <article id="main-view--section-img___article-caption">
-              <h4 id="main-view--section-img___article-caption____h4">
-                Powered by <a href="https://reactjs.org">React</a>, <a href="https://nextjs.org/">NextJS</a>, <a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a>, <a href="https://nodejs.org">NodeJS</a>, <a href="http://techfort.github.io/LokiJS/">LokiJS</a>, <a href="https://web-component-boilerplate.pacificio.com/">web-component-boilerplate</a>, <a href="https://webpack.js.org/">Webpack</a>, and <a href="https://babeljs.io/">Babel</a>
-              </h4>
-              <h2 id="main-view--section-img___article-caption____h2">
-                The Library2 Project is a tool for 21st Century Knowledge Collection
-                </h2>
-            </article>
-          </section>
-        </main>
 
-        <section id="latest">
-          <Latest />
-        </section>
-
-        <div id="upload">
-          <VreelUpload />
-        </div>
-
-        <div className="searchDiv" id="bookSearch">
-          <Booksearch backButtonOff />
-        </div>
-
-        <div className="searchDiv" id="authorSearch">
-          <Authorsearch backButtonOff />
-        </div>
-
-        <main id="carousel">
-          <section id="newsAndEvents">
-            <article id="box1">
-              <header id="newsAndEvents--box1__header"></header>
-              <h3><i><a href="http://localhost:3020/permalink?query=aZ3VhnZCCJURZXCIXNjEP">Ulysses</a></i> </h3>
-              <aside>
-                by James Joyce
-              </aside>
-              <main>
-                1922
-              </main>
-              <p>
-                <a href="https://www.bl.uk/20th-century-literature/articles/an-introduction-to-ulysses">"James Joyce's <i>Ulysses</i> may be more talked about than read."</a>
-              </p>
-            </article>
-            <article id="box2">
-              <header id="newsAndEvents--box2__header"></header>
-              <h3><i><a href="http://localhost:3020/permalink?query=5ebae0145744457d66de32f2-1589305364386191072f14b6a2">Wuthering Heights</a></i></h3>
-              <aside>
-                by Emily Brontë
-              </aside>
-              <main>
-                1847
-              </main>
-              <p>
-                <a href="https://www.sparknotes.com/lit/wuthering/summary/">"When Heathcliff returns, he immediately sets about seeking revenge on all who have wronged him."</a>
-              </p>
-            </article>
-            <article id="box3">
-              <header id="newsAndEvents--box3__header"></header>
-              <h3><i><a href="http://localhost:3020/permalink?query=5ebae44a5744457d66de32f3-15893064423036075459f14b6a2">Eloquent JavaScript</a></i></h3>
-              <span>  </span>
-              <aside>
-                by Marijn Haverbeke
-              </aside>
-              <main>
-                2015
-              </main>
-              <p>
-                <a href="https://eloquentjavascript.net/">"Analogies that try to compare programs to objects we are familiar with tend to fall short."</a>
-              </p>
-            </article>
-          </section>
-        </main>
-
-        <main id="grid">
-          <section id="donate">
-            <span><a href="https://pacificio.com/pay">donate</a></span>
-          </section>
-          <section id="store">
-            <span><a href="https://altaredwood.com">store</a></span>
-          </section>
-          <section id="cafe">
-            <span><a href="https://cafe.pacificio.com">cafe</a></span>
-          </section>
-        </main>
+      
 
         <aside id="settings">
-          <h3><a href="../deleteAllData">Settings</a></h3>
-          <a href="./Desk"><button className="bigB" id="viewALL">Query Data</button></a> 
+          <h3>Settings</h3>
+          <a href="./Desk"><button className="bigB" id="viewALL">Query Data</button></a> <button className="bigB" id="deleteALL" onClick={deletaAllData}>Delete All Data (NO UNDO)</button>
         </aside>
 
         <footer id="info">
@@ -156,7 +76,7 @@ function indexPage() {
         </footer>
       </div>
       <Helmet>
-        <title>Library 2</title>
+        <title>Library 2 - Settings</title>
         <link rel="icon" href="favicon.ico" />
       </Helmet>
 
@@ -185,6 +105,9 @@ function indexPage() {
           button#deleteALL, button.bigB {
             width: calc(70pt + 6vw);
             height: calc(30pt + 8vh);
+          }
+          button#deleteALL {
+            background-color: #fc9003;
           }
           section#main-view--section-img,
           section#newsAndEvents,
