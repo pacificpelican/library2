@@ -52,7 +52,9 @@ open http://localhost:3020
 
 ## Video
 
-- [This screencast](https://www.youtube.com/watch?v=_LOOBmu5-Ho&t=41s) takes a look at an early version of the project
+- [This screencast from 2021](https://www.youtube.com/watch?v=ErDMRlUDlXI) walks through setting up and using library2
+
+- [This older screencast](https://www.youtube.com/watch?v=_LOOBmu5-Ho&t=41s) takes a look at an early version of the project
 
 ## Info about the create-next-app scaffold: Custom Express Server example
 
