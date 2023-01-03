@@ -127,7 +127,7 @@ class Edit extends Component {
             onClick={this.handlesubmit}
             id="lookupDB"
             label="update in DB"
-          />
+          >submit</button>
         </section>
         <div>
           <section id="propsInfo">
@@ -173,6 +173,23 @@ class Edit extends Component {
           section#propsInfo {
             font-family: "Roboto", "Ubuntu Sans", "Segoe UI", "Lucida Sans",
               Helvetica, sans-serif;
+          }
+          button#lookupDB {
+            background: #f7f8f9;
+            border: 1px solid #e1e1e8;
+            border-radius: 3px;
+            color: #333;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 400;
+            line-height: 1.5;
+            padding: 0.5em 1em;
+            text-align: center;
+            text-decoration: none;
+            text-shadow: none;
+            transition: all 0.2s ease-in-out;
+            width: 10vw;
+            height: 10vh;
           }
         `}</style>
       </div>
