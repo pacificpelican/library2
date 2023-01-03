@@ -1,6 +1,6 @@
 {
   "name": "library2",
-  "version": "1.9.7",
+  "version": "1.10.0",
   "author": {
     "email": "d@danmckeown.info",
     "name": "Dan McKeown",
@@ -24,7 +24,6 @@
     "okconceptviewer": "^1.0.1",
     "@material-ui/core": "^3.9.2",
     "object-array-converter": " ^1.0.1",
-    "grommet": "^2.6.5",
     "styled-components": "^4.2.0",
     "@smooth-ui/core-sc": "^10.0.4",
     "react-markdown": "^4.3.1",

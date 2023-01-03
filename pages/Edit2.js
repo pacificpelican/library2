@@ -3,7 +3,6 @@
 //  via mlBench & danmckeown.info
 import React, { Component } from "react";
 import { withRouter } from 'next/router';
-import { Button, TextInput } from "grommet";
 
 import Headernav from "../components/Headernav";
 import Footernav from "../components/Footernav";
@@ -118,13 +117,13 @@ class Edit extends Component {
         </h1>
 
         <section id="user-input">
-          <TextInput
+          <textarea
             id="crypto_output"
             onChange={this.handlecValueChange}
             value={this.state.userObjectAsk}
           />
           <br />
-          <Button
+          <button
             onClick={this.handlesubmit}
             id="lookupDB"
             label="update in DB"
